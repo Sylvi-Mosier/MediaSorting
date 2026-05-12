@@ -1,0 +1,43 @@
+{
+"vinyls": [
+{
+  "numLPs": 2,
+  "runtime": 57,
+  "title": "frailty",
+  "artist": "Jane Remover",
+  "releaseDate": "2021-11-12",
+  "releaseNumber": 1
+},
+{
+  "numLPs": 2,
+  "runtime": 62,
+  "title": "Census Designated",
+  "artist": "Jane Remover",
+  "releaseDate": "2023-10-20",
+  "releaseNumber": 2
+},
+{
+  "numLPs": 2,
+  "runtime": 59,
+  "title": "Ants From Up There",
+  "artist": "Black Country New Road",
+  "releaseDate": "2022-02-04",
+  "releaseNumber": 2
+},
+{
+  "numLPs": 2,
+  "runtime": 52,
+  "title": "Forever Howlong",
+  "artist": "Black Country New Road",
+  "releaseDate": "2025-04-04",
+  "releaseNumber": 3
+},
+{
+  "numLPs": 1,
+  "runtime": 40,
+  "title": "In The Aeroplane Over The Sea",
+  "artist": "Neutral Milk Hotel",
+  "releaseDate": "1998-02-10",
+  "releaseNumber": 2
+}
+]}

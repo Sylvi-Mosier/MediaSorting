@@ -1,0 +1,16 @@
+package unl.soc;
+
+public enum MusicGenre {
+	HYPERPOP,
+	ELECTRONIC,
+	RAP,
+	UNDERGROUND_RAP,
+	ROCK,
+	INDIE_ROCK,
+	HYPERFLIP,
+	CLOUD_RAP,
+	POST_ROCK,
+	MIDWEST_EMO,
+	MATH_ROCK,
+	SHOEGAZE
+}

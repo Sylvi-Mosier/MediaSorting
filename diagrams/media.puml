@@ -1,0 +1,101 @@
+@startuml
+
+Catalogue <|.. Media
+
+Media <|-- Music
+Media <|-- Book
+Media <|-- Video
+
+Music <|-- Vinyl
+Music <|-- CD
+
+Video <|-- Movie
+Video <|-- Show
+
+interface Catalogue {
+    getTitle(): String
+    getArtist(): String
+    getSortTitle(): String
+    getSortArtist(): String
+    getReleaseDate(): LocalDate
+    getReleaseYear(): Integer
+}
+
+
+abstract class Media {
+    - title: String
+    - artist: String
+    - sortTitle: String
+    - sortArtist: String
+    - releaseDate: LocalDate
+    - releaseNumber: Integer
+    - genre: List<T implements Genre>
+    
+    
+    + Media(title: String, artist: String, releaseDate: LocalDate, releaseNumber: Integer)
+    + getTitle(): String
+    + getArtist(): String
+    + getReleaseDate(): LocalDate
+    + getReleaseYear(): Integer
+    + getReleaseNumber(): Integer
+    + getSortTitle(): String
+    + setSortTitle(): String
+    + getSortArtist(): String
+    + setSortArtist(): String
+    + getGenre(): List<T implements Genre>
+    + addGenre(genre: T implements Genre)
+}
+
+class Book {
+    - pageCount: Integer
+    - bookType: Enum
+    
+    + Book(title: String, artist: String, releaseDate: LocalDate, releaseNumber: Integer, bookType: Enum, pageCount: Integer)
+    + getPageCount(): Integer
+    + getBookType(): Enum
+}
+
+abstract class Music {
+    - runtime: Integer
+    
+    + Music(title: String, artist: String, releaseDate: LocalDate, releaseNumber: Integer, runtime: Integer)
+    + getRuntime(): Integer
+}
+
+class Vinyl {
+    - numLPs: Integer
+    
+    + Vinyl(title: String, artist: String, releaseDate: LocalDate, releaseNumber: Integer, runtime: Integer, numLPs: Integer)
+    + getNumLPs(): Integer
+}
+
+class CD {
+    - numCDs: Integer
+    
+    + CD(title: String, artist: String, releaseDate: LocalDate, releaseNumber: Integer, runtime: Integer, numCDs: Integer)
+    + getNumCDs(): Integer
+}
+
+abstract class Video {
+    - medium: Enum
+    - discFormat: Enum
+    - runtime: Integer
+    - numDiscs: Integer
+    
+    + Media(title: String, director: String, releaseDate: LocalDate, releaseNumber: Integer, runtime: Integer, numDiscs: Integer, discFormat: Enum)
+    + getDiscFormat(): Enum
+    + getRuntime(): Integer
+    + getNumDiscs(): Integer
+    + getMedium(): Enum
+    + setMedium(Enum)
+}
+
+class Movie {
+    + Movie(title: String, director: String, releaseDate: LocalDate, releaseNumber: Integer, runtime: Integer, numDiscs: Integer, discFormat: Enum)
+}
+
+class Show {
+    + Show(title: String, director: String, releaseDate: LocalDate, releaseNumber: Integer, runtime: Integer, numDiscs: Integer, discFormat: Enum)
+}
+
+@enduml

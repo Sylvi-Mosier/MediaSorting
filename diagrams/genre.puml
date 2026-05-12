@@ -1,0 +1,38 @@
+@startuml
+Interface Genre {
+    
+}
+
+class MusicGenre Implements Genre {
+    - HYPERPOP
+	- ELECTRONIC
+	- RAP
+	- UNDERGROUND_RAP
+	- ROCK
+	- INDIE_ROCK
+	- HYPERFLIP
+	- CLOUD_RAP
+	- POST_ROCK
+	- MIDWEST_EMO
+	- MATH_ROCK
+	- SHOEGAZE
+}
+
+class BookGenre Implements Genre {
+    - DYSTOPIAN
+    - FANTASY
+    - AUTOBIOGRAPHY
+    - QUEER
+}
+
+class VideoGenre Implements Genre {
+    - HORROR
+	- SLASHER
+	- MEDICAL_DRAMA
+	- WAR
+	- QUEER
+	- EXPERIMENTAL
+}
+
+
+@enduml
