@@ -39,23 +39,11 @@
 |                                                                         |
 +-------------------------------------------------------------------------+
 
++------------------------------------
+-------------------------------------+
 +-------------------------------------------------------------------------+
 | Closet Shelf                                                            |
-+-------------------------------------------------------------------------+
-|                                                                         |
-| Harlan Ellison - Harlan Ellison Greatest Hits                           | 
-|     Inio Asano - Goodnight Punpun                                       |
-|      Ryoko Kui - Dungeon Meshi                                          |
-|    Nagata Kabi - My Lesbian Experience With Loneliness                  |
-|    Nagata Kabi - My Alcoholic Escape From Reality                       |
-|    Nagata Kabi - My Wandering Warrior Existence                         |
-|    Nagata Kabi - My Pancreas Broke But My Life Got Better               |
-|         Nagabe - Smell                                                  |
-|   Ray Bradbury - Fahrenheit                                             |
-|    Osamu Dazai - No Longer Human                                        |
-|  George Orwell - 1984                                                   |
-|                                                                         |
-+------------------------------------Books--------------------------------+
++----------------------------------Books----------------------------------+
 |                                     1984                                |
 |                      Dungeon Meshi Vol 1                                |
 |                               Fahrenheit                                |

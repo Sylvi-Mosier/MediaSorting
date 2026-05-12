@@ -8,7 +8,6 @@ public class MediaList<T extends Media> implements Iterable<T> {
 	private Media[] contents;
 	private Comparator<T> comp;
 	
-	
 	public MediaList(Comparator<T> comp) {
 		this.comp = comp;
 		this.contents = new Media[10];
@@ -111,5 +110,7 @@ public class MediaList<T extends Media> implements Iterable<T> {
 	private String lineBreak() {
 		return String.format("+-------------------------------------------------------------------------+\n");
 	}
+	
+	
 	
 }

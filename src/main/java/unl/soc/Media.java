@@ -10,6 +10,7 @@ public abstract class Media implements Catalogue {
 	private String sortArtist;
 	private LocalDate releaseDate;
 	private Integer releaseNumber;
+	private Dimension dimension;
 	//TODO: implement genre
 	// private List<? extends Genre> genres;
 	
@@ -19,6 +20,25 @@ public abstract class Media implements Catalogue {
 		this.artist = artist;
 		this.releaseDate = releaseDate;
 		this.releaseNumber = releaseNumber;
+		this.dimension = null;
+	}
+	
+	public Media(String title, String artist, LocalDate releaseDate, Integer releaseNumber, Dimension size) {
+		super();
+		this.title = title;
+		this.artist = artist;
+		this.releaseDate = releaseDate;
+		this.releaseNumber = releaseNumber;
+		this.dimension = size;
+	}
+	
+	public Media(String title, String artist, LocalDate releaseDate, Integer releaseNumber, Double length, Double width, Double height) {
+		super();
+		this.title = title;
+		this.artist = artist;
+		this.releaseDate = releaseDate;
+		this.releaseNumber = releaseNumber;
+		this.dimension = new Dimension(length, width, height);
 	}
 
 	public String getSortTitle() {
@@ -57,6 +77,14 @@ public abstract class Media implements Catalogue {
 	
 	public Integer getReleaseYear() {
 		return releaseDate.getYear();
+	}
+	
+	public Dimension getDimensions() {
+		return this.dimension;
+	}
+	
+	protected void setDimensions(Dimension dimension) {
+		this.dimension = dimension;
 	}
 	
 	@Override

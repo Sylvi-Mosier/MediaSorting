@@ -4,14 +4,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -20,16 +17,7 @@ import java.util.List;
 public class MediaListTests {
 	private MediaList<Vinyl> vinylCollection;
 	
-	Comparator<Vinyl> comp = new Comparator<Vinyl>() {
-		public int compare(Vinyl a, Vinyl b) {
-			
-			int cmp = a.getSortArtist().compareTo(b.getSortArtist());
-			if (cmp != 0) {return cmp;}
-			
-			cmp = a.getReleaseNumber().compareTo(b.getReleaseNumber());
-			return cmp;
-		}
-	};
+	Comparator<Vinyl> comp = MediaComparator.vinylByArtist;
 	
 	private Vinyl vinyl01;
 	private Vinyl vinyl02;
@@ -48,6 +36,7 @@ public class MediaListTests {
 		vinyl04 = new Vinyl("Forever Howlong",    "Black Country New Road", LocalDate.parse("2025-04-04"), 3, 52, 2);
 		vinyl05 = new Vinyl("Revengeseekerz", 	  "Jane Remover", 			LocalDate.parse("2025-04-04"), 4, 49, 2);
 		vinyl06 = new Vinyl("Ghostholding", 	  "Venturing", 				LocalDate.parse("2025-02-10"), 3, 51, 2);
+		vinyl01.setSortTitle("Frailty");
 		vinyl06.setSortArtist("Jane Remover");
 		
 	}
@@ -120,9 +109,11 @@ public class MediaListTests {
 		
 		Collections.sort(expected, comp);
 		
+		
+		
 		System.out.println("vinylCollection class: " + vinylCollection.getClassType());
 		System.out.println("          vinyl class: " + vinyl03.getClass());
-		
+		System.out.println("         valued class: " + unl.soc.Vinyl.class);
 		
 		int i=0;
 		for (Vinyl vinyl : vinylCollection) {
@@ -152,8 +143,43 @@ public class MediaListTests {
 		vinylCollection.add(vinyl05);
 		vinylCollection.add(vinyl06);
 		
+		System.out.println(vinylCollection.toString());
 		assertEquals(expected, vinylCollection.toString());
 		
 	}
+	
+	@Test
+	public void cdMediaListTest() {
+		List<CD> expected = new ArrayList<>();
+		MediaList<CD> actual = new MediaList<CD>(MediaComparator.cdByArtist);
+		
+		CD cd01 = new CD("CHASER", 				   "Femtanyl",  LocalDate.parse("2023-08-27"), 1, 14, 1);
+		CD cd02 = new CD("the jeriancore trilogy", "jerian", 	LocalDate.parse("2025-10-17"), 1, 81, 2);
+		CD cd03 = new CD("Kid A", 				   "Radiohead", LocalDate.parse("2000-10-02"), 4, 50, 1);
+		
+		cd02.setSortArtist("Jerian");
+		
+		expected.add(cd01);
+		expected.add(cd02);
+		expected.add(cd03);
+		
+		Collections.sort(expected, MediaComparator.cdByArtist);
+		
+		actual.add(cd01);
+		actual.add(cd02);
+		actual.add(cd03);
+		
+		for (int i=0; i<expected.size(); i++) {
+			assertEquals(expected.get(i), actual.get(i));
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 }
