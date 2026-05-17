@@ -33,4 +33,9 @@ public class Vinyl extends Music {
 		return numLPs;
 	}
 	
+	@Override
+	protected String lineHeader() {
+		return String.format("+----------------------------------Vinyl----------------------------------+\n");
+	}
+	
 }

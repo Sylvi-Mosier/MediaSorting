@@ -36,6 +36,7 @@ public class MediaListTests {
 		vinyl04 = new Vinyl("Forever Howlong",    "Black Country New Road", LocalDate.parse("2025-04-04"), 3, 52, 2);
 		vinyl05 = new Vinyl("Revengeseekerz", 	  "Jane Remover", 			LocalDate.parse("2025-04-04"), 4, 49, 2);
 		vinyl06 = new Vinyl("Ghostholding", 	  "Venturing", 				LocalDate.parse("2025-02-10"), 3, 51, 2);
+		
 		vinyl01.setSortTitle("Frailty");
 		vinyl06.setSortArtist("Jane Remover");
 		
@@ -90,6 +91,44 @@ public class MediaListTests {
 	}
 	
 	@Test
+	public void stressTest() {
+		vinylCollection.add(vinyl01);
+		vinylCollection.add(vinyl02);
+		vinylCollection.add(vinyl03);
+		vinylCollection.add(vinyl04);
+		vinylCollection.add(vinyl05);
+		vinylCollection.add(vinyl06);
+		
+		vinylCollection.add(vinyl01);
+		vinylCollection.add(vinyl02);
+		vinylCollection.add(vinyl03);
+		vinylCollection.add(vinyl04);
+		vinylCollection.add(vinyl05);
+		vinylCollection.add(vinyl06);
+		
+		vinylCollection.add(vinyl01);
+		vinylCollection.add(vinyl02);
+		vinylCollection.add(vinyl03);
+		vinylCollection.add(vinyl04);
+		vinylCollection.add(vinyl05);
+		vinylCollection.add(vinyl06);
+		
+		vinylCollection.add(vinyl01);
+		vinylCollection.add(vinyl02);
+		vinylCollection.add(vinyl03);
+		vinylCollection.add(vinyl04);
+		vinylCollection.add(vinyl05);
+		vinylCollection.add(vinyl06);
+		
+		vinylCollection.add(vinyl01);
+		vinylCollection.add(vinyl02);
+		vinylCollection.add(vinyl03);
+		vinylCollection.add(vinyl04);
+		vinylCollection.add(vinyl05);
+		vinylCollection.add(vinyl06);
+	}
+	
+	@Test
 	public void iteratorTest() {
 		vinylCollection.add(vinyl01);
 		vinylCollection.add(vinyl02);
@@ -135,6 +174,8 @@ public class MediaListTests {
 				|           Jane Remover -     Revengeseekerz [2025]                      |
 				+-------------------------------------------------------------------------+
 				""";
+		
+		
 		
 		vinylCollection.add(vinyl01);
 		vinylCollection.add(vinyl02);

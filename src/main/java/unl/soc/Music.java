@@ -33,4 +33,9 @@ public abstract class Music extends Media {
 		return runtime;
 	}
 	
+	@Override
+	protected String lineHeader() {
+		return String.format("+----------------------------------Music----------------------------------+\n");
+	}
+	
 }

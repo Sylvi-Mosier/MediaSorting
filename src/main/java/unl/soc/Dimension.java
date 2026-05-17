@@ -32,4 +32,9 @@ public class Dimension {
 		return this.length * this.width * this.height;
 	}
 	
+	@Override
+	public String toString() {
+		return String.format("[%.2f x %.2f x %.2f]\n", this.length, this.width, this.height);
+	}
+	
 }

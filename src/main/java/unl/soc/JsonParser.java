@@ -19,6 +19,7 @@ public class JsonParser {
 			
 			Gson gson = new GsonBuilder()
 							.setPrettyPrinting()
+							.serializeNulls()
 							.registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
 							.create();
 			
@@ -47,6 +48,7 @@ public class JsonParser {
 			
 			Gson gson = new GsonBuilder()
 							.setPrettyPrinting()
+							.serializeNulls()
 							.registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
 							.create();
 			
@@ -75,6 +77,7 @@ public class JsonParser {
 			
 			Gson gson = new GsonBuilder()
 							.setPrettyPrinting()
+							.serializeNulls()
 							.registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
 							.create();
 			
@@ -105,6 +108,7 @@ public class JsonParser {
 			
 			Gson gson = new GsonBuilder()
 							.setPrettyPrinting()
+							.serializeNulls()
 							.registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
 							.create();
 			
@@ -133,6 +137,7 @@ public class JsonParser {
 			
 			Gson gson = new GsonBuilder()
 							.setPrettyPrinting()
+							.serializeNulls()
 							.registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
 							.create();
 			

@@ -5,23 +5,44 @@
   "runtime": 14,
   "title": "CHASER",
   "artist": "Femtanyl",
+  "sortTitle": null,
+  "sortArtist": null,
   "releaseDate": "2023-08-27",
-  "releaseNumber": 1
+  "releaseNumber": 1,
+  "dimension": {
+    "length": 142.0,
+    "height": 125.0,
+    "width": 10.0
+  }
 },
 {
   "numCDs": 2,
   "runtime": 81,
   "title": "the jeriancore trilogy",
   "artist": "jerian",
+  "sortTitle": null,
+  "sortArtist": null,
   "releaseDate": "2025-10-17",
-  "releaseNumber": 1
+  "releaseNumber": 1,
+  "dimension": {
+    "length": 142.0,
+    "height": 125.0,
+    "width": 10.0
+  }
 },
 {
   "numCDs": 1,
   "runtime": 50,
   "title": "Kid A",
   "artist": "Radiohead",
+  "sortTitle": null,
+  "sortArtist": null,
   "releaseDate": "2000-10-02",
-  "releaseNumber": 4
+  "releaseNumber": 4,
+  "dimension": {
+    "length": 142.0,
+    "height": 125.0,
+    "width": 10.0
+  }
 }
 ]}

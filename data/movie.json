@@ -7,7 +7,10 @@
   "numDiscs": 3,
   "title": "Videodrome",
   "artist": "David Cronenberg",
+  "sortTitle": null,
+  "sortArtist": null,
   "releaseDate": "1983-02-04",
-  "releaseNumber": 8
+  "releaseNumber": 8,
+  "dimension": null
 }
 ]}

@@ -17,7 +17,7 @@ public class DataLoaderTests {
 		List<String> expected = new ArrayList<String>();
 		List<String> actual = new ArrayList<String>();
 		
-		String fileName = "data/vinyl.csv";
+		String fileName = "data/test/vinyl.csv";
 		
 		expected.add("frailty,Jane Remover,2021-11-12,1,57,2");
 		expected.add("Census Designated,Jane Remover,2023-10-20,2,62,2");
@@ -39,7 +39,7 @@ public class DataLoaderTests {
 		List<String> expected = new ArrayList<String>();
 		List<String> actual = new ArrayList<String>();
 		
-		String fileName = "data/cd.csv";
+		String fileName = "data/test/cd.csv";
 		
 		expected.add("CHASER,Femtanyl,2023-08-27,1,14,1");
 		expected.add("the jeriancore trilogy,jerian,2025-10-17,1,81,2");
@@ -58,7 +58,7 @@ public class DataLoaderTests {
 		List<String> expected = new ArrayList<String>();
 		List<String> actual = new ArrayList<String>();
 		
-		String fileName = "data/movies.csv";
+		String fileName = "data/test/movies.csv";
 		
 		expected.add("Videodrome,David Cronenberg,1983-02-04,8,Live Action,Blu-Ray,93,3");
 		
@@ -75,7 +75,7 @@ public class DataLoaderTests {
 		List<String> expected = new ArrayList<String>();
 		List<String> actual = new ArrayList<String>();
 		
-		String fileName = "data/show.csv";
+		String fileName = "data/test/show.csv";
 		
 		expected.add("House Season 1,Hugh Laurie,2004-11-16,1,Live Action,DVD,972,6");
 		
@@ -92,7 +92,7 @@ public class DataLoaderTests {
 		List<String> expected = new ArrayList<String>();
 		List<String> actual = new ArrayList<String>();
 		
-		String fileName = "data/book.csv";
+		String fileName = "data/test/book.csv";
 		
 		expected.add("Smell,Nagabe,2025-10-21,1,Manga,186");
 		

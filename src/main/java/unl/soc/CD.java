@@ -33,4 +33,9 @@ public class CD extends Music {
 		return numCDs;
 	}
 	
+	@Override
+	protected String lineHeader() {
+		return String.format("+-----------------------------------CDs-----------------------------------+\n");
+	}
+	
 }

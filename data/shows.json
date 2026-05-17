@@ -7,7 +7,10 @@
   "numDiscs": 6,
   "title": "House Season 1",
   "artist": "Hugh Laurie",
+  "sortTitle": null,
+  "sortArtist": null,
   "releaseDate": "2004-11-16",
-  "releaseNumber": 1
+  "releaseNumber": 1,
+  "dimension": null
 }
 ]}

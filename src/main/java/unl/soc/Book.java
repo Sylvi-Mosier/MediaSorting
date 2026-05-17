@@ -25,4 +25,9 @@ public class Book extends Media {
 		return type;
 	}
 	
+	@Override
+	protected String lineHeader() {
+		return String.format("+----------------------------------Books----------------------------------+\n");
+	}
+	
 }

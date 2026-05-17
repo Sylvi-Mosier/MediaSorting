@@ -74,25 +74,56 @@ public class StorageTests {
 		Storage actual = new Storage("testName", 1.0);
 		
 		assertNotNull(actual);
-		assertTrue(actual.isEmpty, 0);
+		assertTrue(actual.isEmpty());
 		assertEquals(actual.contentSize(), 0);
 	}
 	
 	
 	@Test
 	public void addElement() {
+		String expected = """
+				+-------------------------------------------------------------------------+
+				| Vinyl Storage                                                           |
+				+----------------------------------Vinyl----------------------------------+
+				| Black Country New Road - Ants From Up There [2022]                      |
+				| Black Country New Road -    Forever Howlong [2025]                      |
+				|           Jane Remover -            frailty [2021]                      |
+				|           Jane Remover -  Census Designated [2023]                      |
+				|           Jane Remover -     Revengeseekerz [2025]                      |
+				|              Venturing -       Ghostholding [2025]                      |
+				+-------------------------------------------------------------------------+
+				""";
+		
 		storage.addMediaList(vinylCollection);
 		
-		assertEquals(storage.getMediaList(0).toString(), vinylCollection.toString());
-		
-		for (Vinyl vinyl : storage.getMediaList(0)) {
-			
-		}
+		//System.out.println(storage.toString());
+		assertEquals(expected, storage.toString());
 	}
 	
 	@Test
 	public void addCollection() {
+		String expected = """
+				+-------------------------------------------------------------------------+
+				| Vinyl Storage                                                           |
+				+----------------------------------Vinyl----------------------------------+
+				| Black Country New Road - Ants From Up There [2022]                      |
+				| Black Country New Road -    Forever Howlong [2025]                      |
+				|           Jane Remover -            frailty [2021]                      |
+				|           Jane Remover -  Census Designated [2023]                      |
+				|           Jane Remover -     Revengeseekerz [2025]                      |
+				|              Venturing -       Ghostholding [2025]                      |
+				+-----------------------------------CDs-----------------------------------+
+				|  Femtanyl -                 CHASER [2023]                               |
+				|    jerian - the jeriancore trilogy [2025]                               |
+				| Radiohead -                  Kid A [2000]                               |
+				+-------------------------------------------------------------------------+
+				""";
 		
+		storage.addMediaList(vinylCollection);
+		storage.addMediaList(cdCollection);
+		
+		System.out.println(storage.toString());
+		assertEquals(expected, storage.toString());
 	}
 	
 	

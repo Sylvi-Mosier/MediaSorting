@@ -3,6 +3,9 @@
   "type": "MANGA",
   "title": "Smell",
   "artist": "Nagabe",
+  "sortTitle": null,
+  "sortArtist": null,
   "releaseDate": "2025-10-21",
-  "releaseNumber": 1
+  "releaseNumber": 1,
+  "dimension": null
 }

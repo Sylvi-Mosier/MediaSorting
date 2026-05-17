@@ -40,4 +40,9 @@ public abstract class Video extends Media {
 		return medium + format + runtime + numDiscs;
 	}
 	
+	@Override
+	protected String lineHeader() {
+		return String.format("+----------------------------------Video----------------------------------+\n");
+	}
+	
 }

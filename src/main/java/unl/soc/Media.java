@@ -87,6 +87,10 @@ public abstract class Media implements Catalogue {
 		this.dimension = dimension;
 	}
 	
+	protected String lineHeader() {
+		return String.format("+----------------------------------Media----------------------------------+\n");
+	}
+	
 	@Override
 	public String toString() {
 		return String.format("%s - %s [%d]", this.getArtist(), this.getTitle(), this.getReleaseYear());

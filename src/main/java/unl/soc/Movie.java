@@ -13,4 +13,9 @@ public class Movie extends Video {
 		return this.getArtist();
 	}
 	
+	@Override
+	protected String lineHeader() {
+		return String.format("+----------------------------------Movies---------------------------------+\n");
+	}
+	
 }
