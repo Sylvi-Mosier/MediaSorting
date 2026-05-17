@@ -100,6 +100,35 @@ public class JsonParser {
 		
 	}
 	
+	public static void vinylJson(MediaList<Vinyl> vinyls, String fileName) {
+		File f = new File(fileName);
+		try {
+			PrintWriter pw = new PrintWriter(f);
+			
+			Gson gson = new GsonBuilder()
+							.setPrettyPrinting()
+							.serializeNulls()
+							.registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
+							.create();
+			
+			pw.printf("{\n\"vinyls\": [\n");
+			
+			Integer iteration = 0;
+			for (Vinyl vinyl : vinyls) {
+				iteration++;
+				if (iteration != vinyls.size()) {pw.println(gson.toJson(vinyl) + ",");} 
+				else 							{pw.println(gson.toJson(vinyl));}
+			}
+			
+			pw.printf("]}");
+			
+			pw.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 	
 	public static void cdJson(List<CD> cds, String fileName) {
 		File f = new File(fileName);

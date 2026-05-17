@@ -1,5 +1,8 @@
 package unl.soc;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -31,6 +34,8 @@ public class DataConverter {
 		MediaList<Vinyl> processedVinyl = new MediaList<Vinyl>(comp);
 		
 		for (String rawVinyl : rawVinyls) {
+			Vinyl vinyl;
+			
 			String tokens[] = rawVinyl.split(",");
 			
 			String title = tokens[0];
@@ -40,7 +45,25 @@ public class DataConverter {
 			Integer runtime = Integer.parseInt(tokens[4]);
 			Integer numLPs = Integer.parseInt(tokens[5]);
 			
-			Vinyl vinyl = new Vinyl(title, artist, releaseDate, releaseNumber, runtime, numLPs);
+			if (!isNull(tokens[8]) && 
+				!isNull(tokens[9]) && 
+				!isNull(tokens[10])) {
+				Dimension dimension = new Dimension(Double.parseDouble(tokens[8]), 
+													Double.parseDouble(tokens[9]), 
+													Double.parseDouble(tokens[10]));
+				
+				vinyl = new Vinyl(title, artist, releaseDate, releaseNumber, dimension, runtime, numLPs);
+			} else {
+				vinyl = new Vinyl(title, artist, releaseDate, releaseNumber, runtime, numLPs);
+			}
+			
+			
+			if (!isNull(tokens[6])) { vinyl.setSortTitle(tokens[6]);}
+			if (!isNull(tokens[7])) { vinyl.setSortArtist(tokens[7]);}
+			
+			
+			
+			
 			processedVinyl.add(vinyl);
 		}
 		
@@ -219,22 +242,28 @@ public class DataConverter {
 		return books;
 	}
 	
+	private static boolean isNull(String conditional) {
+		if (conditional.compareTo("null") == 0) {return true;}
+		return false;
+	}
 	
 	public static void main(String[] args) {
 		
-		List<String> rawVinylsFancy = new ArrayList<>();
 		List<String> rawVinyls = new ArrayList<>();
 		List<String> rawCDs = new ArrayList<>();
 		List<String> rawMovies = new ArrayList<>();
 		List<String> rawShows = new ArrayList<>();
 		List<String> rawBooks = new ArrayList<>();
+		List<String> rawVinylsFancy = new ArrayList<>();
+		List<String> rawMoviesFancy = new ArrayList<>();
 		
 		rawVinyls = DataLoader.dataLoader("data/test/vinyl.csv");
-		rawVinylsFancy = DataLoader.dataLoader("data/vinyl.csv");
 		rawCDs = DataLoader.dataLoader("data/test/cd.csv");
 		rawMovies = DataLoader.dataLoader("data/test/movies.csv");
 		rawShows = DataLoader.dataLoader("data/test/show.csv");
 		rawBooks = DataLoader.dataLoader("data/test/book.csv");
+		rawVinylsFancy = DataLoader.dataLoader("data/vinyl.csv");
+		rawMoviesFancy = DataLoader.dataLoader("data/movies.csv");
 		
 		List<Vinyl> vinyl = DataConverter.vinylConverter(rawVinyls);
 		List<CD> cds = DataConverter.cdConverter(rawCDs);
@@ -243,16 +272,39 @@ public class DataConverter {
 		List<Book> books = DataConverter.bookConverter(rawBooks);
 		
 		MediaList<Vinyl> fancyVinyl = DataConverter.vinylConverter(rawVinylsFancy, MediaComparator.vinylByArtist);
-		MediaList<CD> fancyCD = DataConverter.cdConverter(rawCDs, MediaComparator.cdByArtist);
-		MediaList<Movie> fancyMovies = DataConverter.movieConverter(rawMovies, MediaComparator.movieByDirector);
+		MediaList<CD> fancyCDs = DataConverter.cdConverter(rawCDs, MediaComparator.cdByArtist);
+		MediaList<Movie> fancyMovies = DataConverter.movieConverter(rawMoviesFancy, MediaComparator.movieByTitle);
 		MediaList<Show> fancyShows = DataConverter.showConverter(rawShows, MediaComparator.showByTitle);
 		MediaList<Book> fancyBooks = DataConverter.bookConverter(rawBooks, MediaComparator.bookByTitle);
 		
+		Storage storage = new Storage("Media Storage", 125.0);
+		
+		storage.addMediaList(fancyVinyl);
+		storage.addMediaList(fancyCDs);
+		storage.addMediaList(fancyMovies);
+		storage.addMediaList(fancyShows);
+		storage.addMediaList(fancyBooks);
+		
+		storage.writeToOutput();
+		
+		/*
+		File f = new File("data/output.txt");
+		try {
+			PrintWriter pw = new PrintWriter(f);
+			pw.println(storage.toString());
+			pw.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		*/
+		
+		/*
 		System.out.println(fancyVinyl.toString());
-		System.out.println(fancyCD.toString());
+		System.out.println(fancyCDs.toString());
 		System.out.println(fancyMovies.toString());
 		System.out.println(fancyShows.toString());
 		System.out.println(fancyBooks.toString());
+		*/
 		
 		JsonParser.movieJson(movies, "data/movie.json");
 		JsonParser.showJson(shows, "data/shows.json");

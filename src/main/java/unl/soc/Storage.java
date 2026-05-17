@@ -1,9 +1,10 @@
 package unl.soc;
 
-import java.util.Iterator;
 import java.util.List;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Comparator;
 
 
 public class Storage {
@@ -37,18 +38,22 @@ public class Storage {
 	
 	public void addMediaList(MediaList<? extends Media> mediaList) {
 		this.contents.add(mediaList);
-		//contents.add(mediaList);
 	}
 	
-	public MediaList<? extends Media> getContents() {
-		return (MediaList<? extends Media>) this.contents;
+	public void writeToOutput() {
+		this.writeToFile("data/output.txt");
 	}
 	
-	public MediaList<? extends Media> getMediaList() {
-		
+	public void writeToFile(String fileName) {
+		File f = new File(fileName);
+		try {
+			PrintWriter pw = new PrintWriter(f);
+			pw.println(this.toString());
+			pw.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
-	
-	
 	
 	@Override
 	public String toString() {

@@ -76,6 +76,15 @@ public class MediaComparator {
 		}
 	};
 	
+	public static Comparator<Movie> movieByTitle = new Comparator<>() {
+		public int compare(Movie a, Movie b) {
+			int cmp = a.getSortTitle().compareTo(b.getSortTitle());
+			if (cmp != 0) {return cmp;}
+			
+			return a.getReleaseNumber().compareTo(b.getReleaseNumber());
+		}
+	};
+	
 	public static Comparator<Book> bookByTitle = new Comparator<>() {
 		public int compare(Book a, Book b) {
 			int cmp = a.getSortTitle().compareTo(b.getSortTitle());
