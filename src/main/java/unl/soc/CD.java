@@ -24,8 +24,7 @@ public class CD extends Music {
 	}
 	
 	private static Dimension findDimension(int numCDs) {
-		if 		(numCDs == 1) {return new Dimension(142.0, 10.0, 125.0);}
-		else if (numCDs == 2) {return new Dimension(142.0, 10.0, 125.0);}
+		if 		(numCDs <= 2) {return new Dimension(142.0, 10.0, 125.0);}
 		else 				  {return null;}
 	}
 	

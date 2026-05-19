@@ -215,12 +215,12 @@ public class MediaListTests {
 	@Test
 	public void dimensionTest() {
 		List<String> expected = new ArrayList<>();
-		expected.add("Ants From Up There [2022] : [331.15mm x 12.70mm x 331.15mm]");
-		expected.add(	"Forever Howlong [2025] : [331.15mm x 12.70mm x 331.15mm]");
-		expected.add(			"frailty [2021] : [331.15mm x 12.70mm x 331.15mm]");
-		expected.add( "Census Designated [2023] : [331.15mm x 12.70mm x 331.15mm]");
-		expected.add(	   "Ghostholding [2025] : [331.15mm x 12.70mm x 331.15mm]");
-		expected.add(	 "Revengeseekerz [2025] : [331.15mm x 12.70mm x 331.15mm]");
+		expected.add("Ants From Up There: 12.70mm");
+		expected.add(	"Forever Howlong: 12.70mm");
+		expected.add(			"frailty: 12.70mm");
+		expected.add( "Census Designated: 12.70mm");
+		expected.add(	   "Ghostholding: 12.70mm");
+		expected.add(	 "Revengeseekerz: 12.70mm");
 		
 		Double expectedLength = 331.15 * 6.0;
 		Double expectedWidth  =  12.7  * 6.0;
@@ -243,6 +243,48 @@ public class MediaListTests {
 		assertEquals(expectedLength, vinylCollection.getDimensions().getLength(), TOLERANCE, "length error");
 		assertEquals(expectedWidth , vinylCollection.getDimensions().getWidth() , TOLERANCE, "width error");
 		assertEquals(expectedHeight, vinylCollection.getDimensions().getHeight(), TOLERANCE, "height error");
+		
+	}
+	
+	@Test
+	public void sizeReportTest() {
+		String vinylExpected = """
+				+----------------------------------Vinyl----------------------------------+
+				| Ants From Up There: 12.70mm                                             |
+				|    Forever Howlong: 12.70mm                                             |
+				|            frailty: 12.70mm                                             |
+				|  Census Designated: 12.70mm                                             |
+				|       Ghostholding: 12.70mm                                             |
+				|     Revengeseekerz: 12.70mm                                             |
+				""";
+		
+		String cdExpected = """
+				+-----------------------------------CDs-----------------------------------+
+				|                 CHASER: 10.00mm                                         |
+				| the jeriancore trilogy: 10.00mm                                         |
+				|                  Kid A: 10.00mm                                         |
+				""";
+		
+		vinylCollection.add(vinyl01);
+		vinylCollection.add(vinyl02);
+		vinylCollection.add(vinyl03);
+		vinylCollection.add(vinyl04);
+		vinylCollection.add(vinyl05);
+		vinylCollection.add(vinyl06);
+		
+		MediaList<CD> cdCollection = new MediaList<CD>(MediaComparator.cdByArtist);
+		CD cd01 = new CD("CHASER", 				   "Femtanyl",  LocalDate.parse("2023-08-27"), 1, 14, 1);
+		CD cd02 = new CD("the jeriancore trilogy", "jerian", 	LocalDate.parse("2025-10-17"), 1, 81, 2);
+		CD cd03 = new CD("Kid A", 				   "Radiohead", LocalDate.parse("2000-10-02"), 4, 50, 1);
+		
+		cd02.setSortArtist("Jerian");
+		
+		cdCollection.add(cd01);
+		cdCollection.add(cd02);
+		cdCollection.add(cd03);
+		
+		assertEquals(vinylExpected, vinylCollection.storageReport());
+		assertEquals(vinylExpected,	   cdCollection.storageReport());
 		
 	}
 	

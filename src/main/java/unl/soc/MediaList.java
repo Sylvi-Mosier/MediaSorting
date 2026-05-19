@@ -110,7 +110,7 @@ public class MediaList<T extends Media> implements Iterable<T> {
 	@Override
 	public String toString() {
 		int maxArtist = this.artistSpacing;
-		int maxTitle = this.titleSpacing;
+		int maxTitle  = this.titleSpacing;
 		
 		StringBuilder sb = new StringBuilder();
 		
@@ -131,6 +131,21 @@ public class MediaList<T extends Media> implements Iterable<T> {
 		sb.append(lineHeader());
 		for (int i=0; i<this.size; i++) {
 			sb.append(String.format("| %-71s |\n", this.contents[i].toString(maxArtist, maxTitle)));
+		}
+		
+		return sb.toString();
+	}
+	
+	public String storageReport() {
+		StringBuilder sb = new StringBuilder();
+		
+		if (isEmpty()) { sb.append(lineBreak());} 
+		else 		   { sb.append(this.contents[0].lineHeader());}
+		
+		
+		
+		for (int i=0; i<this.size; i++) {
+			sb.append(String.format("| %-71s |\n", this.contents[i].toStringDimension(this.titleSpacing)));
 		}
 		
 		return sb.toString();

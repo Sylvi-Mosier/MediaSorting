@@ -114,13 +114,49 @@ public abstract class Media implements Catalogue {
 	public String toStringDimension() {
 		if (this.dimension == null) {return null;}
 		
-		return String.format("%s : %s", titlePrint(), this.dimension.toString());
+		switch (this.dimension.getUnit()) {
+		case MILLIMETERS:
+			return String.format("%s: %.2fmm", this.title, this.dimension.getWidth());
+		case CENTIMETERS:
+			return String.format("%s: %.2fcm", this.title, this.dimension.getWidth());
+		case INCHES:
+			return String.format("%s: %.2f'", this.title, this.dimension.getWidth());
+		case FEET:
+			return String.format("%s: %.2f\"", this.title, this.dimension.getWidth());
+		}
+		
+		return String.format("%s: %.2f", this.title, this.dimension.getWidth());
 	}
 	
 	public String toStringDimension(int titleSpacing) {
 		if (this.dimension == null) {return null;}
 		
-		return String.format("%s : %s", titlePrint(titleSpacing), this.dimension.toString());
+		int titleLength = getTitle().length();
+		
+		StringBuilder sb = new StringBuilder();
+		
+		for (int i=0; i<titleSpacing - titleLength; i++) {
+			sb.append(" ");
+		}
+		
+		switch (this.dimension.getUnit()) {
+		case MILLIMETERS:
+			sb.append(String.format("%s: %.2fmm", this.title, this.dimension.getWidth()));
+			break;
+		case CENTIMETERS:
+			sb.append(String.format("%s: %.2fcm", this.title, this.dimension.getWidth()));
+			break;
+		case INCHES:
+			sb.append(String.format("%s: %.2f'", this.title, this.dimension.getWidth()));
+			break;
+		case FEET:
+			sb.append(String.format("%s: %.2f\"", this.title, this.dimension.getWidth()));
+			break;
+		default:
+			sb.append(String.format("%s: %.2f", this.title, this.dimension.getWidth()));
+		}
+		
+		return sb.toString();
 	}
 	
 	public String toString(int artistSpacing, int titleSpacing) {

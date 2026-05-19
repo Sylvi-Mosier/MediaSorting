@@ -97,6 +97,10 @@ public class Dimension {
 		return this.unit;
 	}
 	
+	public Double toMillimeters(Double measurement) {
+		return measurement;
+	}
+	
 	private Double convertInput(Double input) {
 		switch (this.unit) {
 			case MILLIMETERS:
@@ -154,6 +158,27 @@ public class Dimension {
 	@Override
 	public String toString() {
 		switch (this.unit) {
+			case MILLIMETERS:
+				return String.format("[%.2fmm x %.2fmm x %.2fmm]", this.length, this.width, this.height);
+			case CENTIMETERS:
+				return String.format("[%.2fcm x %.2fcm x %.2fcm]", millimetersToCentimeters(this.length), 
+																   millimetersToCentimeters(this.width), 
+																   millimetersToCentimeters(this.height));
+			case INCHES:
+				return String.format("[%.2f' x %.2f' x %.2f']", millimetersToInches(this.length), 
+						   										millimetersToInches(this.width), 
+						   										millimetersToInches(this.height));
+			case FEET:
+				return String.format("[%.2f\" x %.2f\" x %.2f\"]", millimetersToFeet(this.length), 
+																   millimetersToFeet(this.width), 
+																   millimetersToFeet(this.height));
+			default:
+				return String.format("[%.2f x %.2f x %.2f]", this.length, this.width, this.height);
+		}
+	}
+	
+	public String toString(LengthUnit unit) {
+		switch (unit) {
 			case MILLIMETERS:
 				return String.format("[%.2fmm x %.2fmm x %.2fmm]", this.length, this.width, this.height);
 			case CENTIMETERS:

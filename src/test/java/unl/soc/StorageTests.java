@@ -15,7 +15,7 @@ public class StorageTests {
 	
 	private Storage storage;
 	private String storageName = "Vinyl Storage";
-	private Dimension dimension = new Dimension(19.25, 14.48, 15.98, LengthUnit.INCHES);
+	private Dimension dimension = new Dimension(489.0, 368.0, 406.0, LengthUnit.MILLIMETERS);
 	
 	private MediaList<Vinyl> vinylCollection;
 	private MediaList<CD> 		cdCollection;
@@ -48,6 +48,7 @@ public class StorageTests {
 		vinyl04 = new Vinyl("Forever Howlong",    "Black Country New Road", LocalDate.parse("2025-04-04"), 3, 52, 2);
 		vinyl05 = new Vinyl("Revengeseekerz", 	  "Jane Remover", 			LocalDate.parse("2025-04-04"), 4, 49, 2);
 		vinyl06 = new Vinyl("Ghostholding", 	  "Venturing", 				LocalDate.parse("2025-02-10"), 3, 51, 2);
+		vinyl06.setSortArtist("Jane Remover");
 		
 		cd01 = new CD("CHASER", 				"Femtanyl",  LocalDate.parse("2023-08-27"), 1, 14, 1);
 		cd02 = new CD("the jeriancore trilogy", "jerian", 	LocalDate.parse("2025-10-17"), 1, 81, 2);
@@ -89,8 +90,8 @@ public class StorageTests {
 				| Black Country New Road -    Forever Howlong [2025]                      |
 				|           Jane Remover -            frailty [2021]                      |
 				|           Jane Remover -  Census Designated [2023]                      |
-				|           Jane Remover -     Revengeseekerz [2025]                      |
 				|              Venturing -       Ghostholding [2025]                      |
+				|           Jane Remover -     Revengeseekerz [2025]                      |
 				+-------------------------------------------------------------------------+
 				""";
 		
@@ -110,8 +111,8 @@ public class StorageTests {
 				| Black Country New Road -    Forever Howlong [2025]                      |
 				|           Jane Remover -            frailty [2021]                      |
 				|           Jane Remover -  Census Designated [2023]                      |
-				|           Jane Remover -     Revengeseekerz [2025]                      |
 				|              Venturing -       Ghostholding [2025]                      |
+				|           Jane Remover -     Revengeseekerz [2025]                      |
 				+-----------------------------------CDs-----------------------------------+
 				|  Femtanyl -                 CHASER [2023]                               |
 				|    jerian - the jeriancore trilogy [2025]                               |
@@ -126,7 +127,95 @@ public class StorageTests {
 	}
 	
 	
+	@Test
+	public void storageReportTest() {
+		String expected = """
+				+-------------------------------------------------------------------------+
+				| Vinyl Storage [489.00mm]                                                |
+				+----------------------------------Vinyl----------------------------------+
+				| Ants From Up There: 12.70mm                                             |
+				|    Forever Howlong: 12.70mm                                             |
+				|            frailty: 12.70mm                                             |
+				|  Census Designated: 12.70mm                                             |
+				|       Ghostholding: 12.70mm                                             |
+				|     Revengeseekerz: 12.70mm                                             |
+				+-----------------------------------CDs-----------------------------------+
+				|                 CHASER: 10.00mm                                         |
+				| the jeriancore trilogy: 10.00mm                                         |
+				|                  Kid A: 10.00mm                                         |
+				+-------------------------------------------------------------------------+
+				| Media Summary:                                                          |
+				|      Vinyl size -  76.20mm                                              |
+				|         CD size -  24.00mm                                              |
+				|           total - 100.20mm                                              |
+				|                                                                         |
+				| Storage:                                                                |
+				|       Vinyl Storage: 489.00mm                                           |
+				|   Remaining Storage: 388.80mm                                           |
+				|                                                                         |
+				|                                                                         |
+				+-------------------------------------------------------------------------+
+				|                   there is enough space for the media                   |
+				+-------------------------------------------------------------------------+
+				""";
+		
+		storage.addMediaList(vinylCollection);
+		storage.addMediaList(cdCollection);
+		System.out.println(storage.storageReport());
+		
+		assertEquals(expected, storage.storageReport());
+		
+	}
 	
+	@Test
+	public void storageReportMultipleLengthUnits() {
+		String expected = """
+				+-------------------------------------------------------------------------+
+				| Vinyl Storage [489.00mm]                                                |
+				+----------------------------------Vinyl----------------------------------+
+				|            frailty: 12.70mm                                             |
+				|  Census Designated: 12.70mm                                             |
+				|       Ghostholding: 12.70mm                                             |
+				|     Revengeseekerz: 12.70mm                                             |
+				+-------------------------------------------------------------------------+
+				| Media Summary:                                                          |
+				|      Vinyl size -  76.20mm                                              |
+				|           total -  76.20mm                                              |
+				|                                                                         |
+				| Storage:                                                                |
+				|       Vinyl Storage: 489.00mm                                           |
+				|   Remaining Storage: 412.80mm                                           |
+				|                                                                         |
+				|                                                                         |
+				+-------------------------------------------------------------------------+
+				|                   there is enough space for the media                   |
+				+-------------------------------------------------------------------------+
+				""";
+		
+		Dimension frailtySize 		 = new Dimension(331.15, 12.7, 331.15, LengthUnit.MILLIMETERS);
+		Dimension censusSize 		 = new Dimension(33.115, 1.27, 33.115, LengthUnit.CENTIMETERS);
+		Dimension ghostHoldingSize   = new Dimension(13.037, 0.5, 13.037 , LengthUnit.INCHES);
+		Dimension revengeSeekerzSize = new Dimension(1.086, 0.04, 1.086  , LengthUnit.FEET);
+		
+		Vinyl frailty = new Vinyl("frailty", "Jane Remover", LocalDate.parse("2021-11-12"), 1, 57, 2, frailtySize);
+		Vinyl census = new Vinyl("Census Designated", "Jane Remover", LocalDate.parse("2023-10-20"), 2, 62, 2, censusSize);
+		Vinyl ghostHolding = new Vinyl("Ghostholding", "Venturing", LocalDate.parse("2025-02-10"), 3, 51, 2, ghostHoldingSize);
+		Vinyl revengeSeekerz = new Vinyl("Revengeseekerz", "Jane Remover", LocalDate.parse("2025-04-04"), 4, 49, 2, revengeSeekerzSize);
+		ghostHolding.setSortArtist("Jane Remover");
+		frailty.setSortTitle("Frailty");
+		
+		MediaList<Vinyl> janeVinyls = new MediaList<Vinyl>(vinylComp);
+		janeVinyls.add(frailty);
+		janeVinyls.add(census);
+		janeVinyls.add(ghostHolding);
+		janeVinyls.add(revengeSeekerz);
+		
+		Storage actual = new Storage(storageName, dimension);
+		actual.addMediaList(janeVinyls);
+		
+		assertEquals(expected, actual.storageReport());
+		
+	}
 	
 	
 }

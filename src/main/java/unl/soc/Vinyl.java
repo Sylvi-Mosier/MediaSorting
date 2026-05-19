@@ -12,7 +12,8 @@ public class Vinyl extends Music {
 		this.setDimensions(findDimension(numLPs));
 	}
 	
-	public Vinyl(String title, String artist, LocalDate releaseDate, Integer releaseNumber, Dimension size, Integer runtime, Integer numLPs) {
+	public Vinyl(String title, String artist, LocalDate releaseDate, Integer releaseNumber, 
+				 Integer runtime, Integer numLPs, Dimension size) {
 		super(title, artist, releaseDate, releaseNumber, size, runtime);
 		this.numLPs = numLPs;
 	}
