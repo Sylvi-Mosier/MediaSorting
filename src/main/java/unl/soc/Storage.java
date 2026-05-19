@@ -10,12 +10,12 @@ import java.util.ArrayList;
 public class Storage {
 	
 	private String name;
-	private Double length;
+	private Dimension dimension;
 	private List<MediaList<? extends Media>> contents;
 	
-	public Storage(String name, Double length) {
+	public Storage(String name, Dimension dimension) {
 		this.name = name;
-		this.length = length;
+		this.dimension = dimension;
 		this.contents = new ArrayList<>();
 	}
 	
@@ -23,8 +23,8 @@ public class Storage {
 		return this.name;
 	}
 	
-	public Double getLength() {
-		return this.length;
+	public Dimension getDimension() {
+		return this.dimension;
 	}
 	
 	public boolean isEmpty() {

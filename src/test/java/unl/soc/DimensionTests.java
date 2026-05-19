@@ -24,7 +24,7 @@ public class DimensionTests {
 	private final Double TOLERANCE = 0.01;
 	
 	/*
-	 * storage used:
+	 * storage used for unit testing:
 	 * https://www.turntablelab.com/collections/ttl-staples/products/line-phono-cube-plus-turntable-stand-record-storage
 	 */
 	
@@ -130,6 +130,12 @@ public class DimensionTests {
 		assertEquals(expected, feet.toString(), "setDimension toString() failure");
 	}
 	
-	
+	@Test
+	public void allCasesToString() {
+		System.out.println(millimeters.toString());
+		System.out.println(centimeters.toString());
+		System.out.println(inches.toString());
+		System.out.println(feet.toString());
+	}
 	
 }

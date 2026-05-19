@@ -15,7 +15,7 @@ public class StorageTests {
 	
 	private Storage storage;
 	private String storageName = "Vinyl Storage";
-	private Double storageLength = 285.75;
+	private Dimension dimension = new Dimension(19.25, 14.48, 15.98, LengthUnit.INCHES);
 	
 	private MediaList<Vinyl> vinylCollection;
 	private MediaList<CD> 		cdCollection;
@@ -36,7 +36,7 @@ public class StorageTests {
 	
 	@BeforeEach
 	public void setUp() {
-		storage = new Storage(storageName, storageLength);
+		storage = new Storage(storageName, dimension);
 		
 		vinylCollection = new MediaList<Vinyl>(vinylComp);
 		cdCollection = new MediaList<CD>(cdComp);
@@ -71,7 +71,7 @@ public class StorageTests {
 	
 	@Test
 	public void constructorTest() {
-		Storage actual = new Storage("testName", 1.0);
+		Storage actual = new Storage("testName", dimension);
 		
 		assertNotNull(actual);
 		assertTrue(actual.isEmpty());
@@ -122,10 +122,8 @@ public class StorageTests {
 		storage.addMediaList(vinylCollection);
 		storage.addMediaList(cdCollection);
 		
-		System.out.println(storage.toString());
 		assertEquals(expected, storage.toString());
 	}
-	
 	
 	
 	

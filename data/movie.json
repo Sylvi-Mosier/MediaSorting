@@ -12,10 +12,10 @@
   "releaseDate": "1985-07-09",
   "releaseNumber": 1,
   "dimension": {
-    "unit": "MILLIMETERS",
-    "length": 137.5,
+    "unit": "INCHES",
+    "length": 141.2875,
     "height": 174.625,
-    "width": 19.05
+    "width": 12.7
   }
 },
 {
@@ -30,10 +30,10 @@
   "releaseDate": "2009-11-13",
   "releaseNumber": 6,
   "dimension": {
-    "unit": "MILLIMETERS",
-    "length": 137.5,
+    "unit": "INCHES",
+    "length": 141.2875,
     "height": 174.625,
-    "width": 19.05
+    "width": 12.7
   }
 },
 {
@@ -189,6 +189,11 @@
   "sortArtist": null,
   "releaseDate": "2016-07-25",
   "releaseNumber": 1,
-  "dimension": null
+  "dimension": {
+    "unit": "INCHES",
+    "length": 136.525,
+    "height": 171.45,
+    "width": 12.7
+  }
 }
 ]}

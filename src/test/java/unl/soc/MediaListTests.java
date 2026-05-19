@@ -26,6 +26,8 @@ public class MediaListTests {
 	private Vinyl vinyl05;
 	private Vinyl vinyl06;
 	
+	private final Double TOLERANCE = 0.01;
+	
 	@BeforeEach
 	public void setUp() {
 		vinylCollection = new MediaList<Vinyl>(comp);
@@ -149,11 +151,6 @@ public class MediaListTests {
 		Collections.sort(expected, comp);
 		
 		
-		
-		System.out.println("vinylCollection class: " + vinylCollection.getClassType());
-		System.out.println("          vinyl class: " + vinyl03.getClass());
-		System.out.println("         valued class: " + unl.soc.Vinyl.class);
-		
 		int i=0;
 		for (Vinyl vinyl : vinylCollection) {
 			assertEquals(expected.get(i), vinyl, "values don't match up on index " + i);
@@ -184,7 +181,6 @@ public class MediaListTests {
 		vinylCollection.add(vinyl05);
 		vinylCollection.add(vinyl06);
 		
-		System.out.println(vinylCollection.toString());
 		assertEquals(expected, vinylCollection.toString());
 		
 	}
@@ -216,8 +212,39 @@ public class MediaListTests {
 		
 	}
 	
-	
-	
+	@Test
+	public void dimensionTest() {
+		List<String> expected = new ArrayList<>();
+		expected.add("Ants From Up There [2022] : [331.15mm x 12.70mm x 331.15mm]");
+		expected.add(	"Forever Howlong [2025] : [331.15mm x 12.70mm x 331.15mm]");
+		expected.add(			"frailty [2021] : [331.15mm x 12.70mm x 331.15mm]");
+		expected.add( "Census Designated [2023] : [331.15mm x 12.70mm x 331.15mm]");
+		expected.add(	   "Ghostholding [2025] : [331.15mm x 12.70mm x 331.15mm]");
+		expected.add(	 "Revengeseekerz [2025] : [331.15mm x 12.70mm x 331.15mm]");
+		
+		Double expectedLength = 331.15 * 6.0;
+		Double expectedWidth  =  12.7  * 6.0;
+		Double expectedHeight = 331.15 * 6.0;
+		
+		List<String> actual = new ArrayList<>();
+		
+		vinylCollection.add(vinyl01);
+		vinylCollection.add(vinyl02);
+		vinylCollection.add(vinyl03);
+		vinylCollection.add(vinyl04);
+		vinylCollection.add(vinyl05);
+		vinylCollection.add(vinyl06);
+		
+		for (int i=0; i<vinylCollection.size(); i++) {
+			actual.add(vinylCollection.get(i).toStringDimension());
+			assertEquals(expected.get(i), actual.get(i));
+		}
+		
+		assertEquals(expectedLength, vinylCollection.getDimensions().getLength(), TOLERANCE, "length error");
+		assertEquals(expectedWidth , vinylCollection.getDimensions().getWidth() , TOLERANCE, "width error");
+		assertEquals(expectedHeight, vinylCollection.getDimensions().getHeight(), TOLERANCE, "height error");
+		
+	}
 	
 	
 	

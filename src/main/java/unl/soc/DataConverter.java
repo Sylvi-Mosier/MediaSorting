@@ -1,8 +1,5 @@
 package unl.soc;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -102,9 +99,20 @@ public class DataConverter {
 			Integer releaseNumber = Integer.parseInt(tokens[3]);
 			Integer runtime = Integer.parseInt(tokens[4]);
 			Integer numCDs = Integer.parseInt(tokens[5]);
+			Dimension dimension = stringToDimension(tokens[8], 
+				    								tokens[9], 
+				    								tokens[10], 
+				    								tokens[11]);
 			
-			CD cd = new CD(title, artist, releaseDate, releaseNumber, runtime, numCDs);
-			cds.add(cd);
+			if (dimension == null) {
+				CD cd = new CD(title, artist, releaseDate, releaseNumber, runtime, numCDs);
+				cds.add(cd);
+			} else {
+				CD cd = new CD(title, artist, releaseDate, releaseNumber, runtime, numCDs, dimension);
+				cds.add(cd);
+			}
+			
+			
 		}
 		
 		return cds;
@@ -149,19 +157,21 @@ public class DataConverter {
 			
 			Integer runtime = Integer.parseInt(tokens[6]);
 			Integer numDiscs = Integer.parseInt(tokens[7]);
+			Dimension dimension = stringToDimension(tokens[8], 
+												    tokens[9], 
+												    tokens[10], 
+												    tokens[11]);
+			Movie movie;
 			
-			Movie movie = new Movie(title, director, releaseDate, releaseNumber, medium, format, runtime, numDiscs);
-			
-			if (!isNull(tokens[8]) &&
-				!isNull(tokens[9]) &&
-				!isNull(tokens[10])) {
-				Dimension dimension = new Dimension(Double.parseDouble(tokens[8]), 
-													Double.parseDouble(tokens[9]), 
-													Double.parseDouble(tokens[10]));
-				movie.setDimensions(dimension);
+			if (dimension == null) {
+				movie = new Movie(title, director, releaseDate, releaseNumber, 
+								  medium, format, runtime, numDiscs);
+				movies.add(movie);
+			} else {
+				movie = new Movie(title, director, releaseDate, releaseNumber, 
+								  medium, format, runtime, numDiscs, dimension);
+				movies.add(movie);
 			}
-			
-			movies.add(movie);
 		}
 		
 		return movies;
@@ -255,30 +265,22 @@ public class DataConverter {
 		return books;
 	}
 	
-	private static Dimension stringToDimension(String length, String width, String height) {
-		if (isNull(length) &&
-			isNull(width) &&
-			isNull(height)) {
-			return null;
-		} else {
-			return new Dimension(Double.parseDouble(length), 
-								 Double.parseDouble(width), 
-								 Double.parseDouble(height));
-		}
-		
-		
-	}
-	
 	private static Dimension stringToDimension(String length, String width, String height, String unit) {
 		if (isNull(length) &&
 			isNull(width)  &&
 			isNull(height)) {
 			return null;
 		} else {
-			return new Dimension(Double.parseDouble(length),
-								 Double.parseDouble(width),
-								 Double.parseDouble(height),
-								 LengthUnit.parseUnit(unit));
+			if (isNull(unit)) {
+				return new Dimension(Double.parseDouble(length),
+						 			 Double.parseDouble(width), 
+						 			 Double.parseDouble(height));
+			} else {
+				return new Dimension(Double.parseDouble(length),
+									 Double.parseDouble(width),
+									 Double.parseDouble(height),
+									 LengthUnit.parseUnit(unit));
+			}
 		}
 		
 		
@@ -299,6 +301,7 @@ public class DataConverter {
 		List<String> rawVinylsFancy = new ArrayList<>();
 		List<String> rawMoviesFancy = new ArrayList<>();
 		List<String> rawBooksFancy = new ArrayList<>();
+		List<String> rawCDsFancy = new ArrayList<>();
 		
 		rawVinyls = DataLoader.dataLoader("data/test/vinyl.csv");
 		rawCDs = DataLoader.dataLoader("data/test/cd.csv");
@@ -308,6 +311,7 @@ public class DataConverter {
 		rawVinylsFancy = DataLoader.dataLoader("data/vinyl.csv");
 		rawMoviesFancy = DataLoader.dataLoader("data/movies.csv");
 		rawBooksFancy = DataLoader.dataLoader("data/book.csv");
+		rawCDsFancy = DataLoader.dataLoader("data/cd.csv");
 		
 		List<Vinyl> vinyl = DataConverter.vinylConverter(rawVinyls);
 		List<CD> cds = DataConverter.cdConverter(rawCDs);
@@ -316,12 +320,14 @@ public class DataConverter {
 		List<Book> books = DataConverter.bookConverter(rawBooks);
 		
 		MediaList<Vinyl> fancyVinyl = DataConverter.vinylConverter(rawVinylsFancy, MediaComparator.vinylByArtist);
-		MediaList<CD> fancyCDs = DataConverter.cdConverter(rawCDs, MediaComparator.cdByArtist);
+		MediaList<CD> fancyCDs = DataConverter.cdConverter(rawCDsFancy, MediaComparator.cdByArtist);
 		MediaList<Movie> fancyMovies = DataConverter.movieConverter(rawMoviesFancy, MediaComparator.movieByFormat);
 		MediaList<Show> fancyShows = DataConverter.showConverter(rawShows, MediaComparator.showByTitle);
 		MediaList<Book> fancyBooks = DataConverter.bookConverter(rawBooksFancy, MediaComparator.bookByTitle);
 		
-		Storage storage = new Storage("Media Storage", 125.0);
+		
+		
+		Storage storage = new Storage("Media Storage", new Dimension(19.25, 14.48, 15.98, LengthUnit.INCHES));
 		
 		storage.addMediaList(fancyVinyl);
 		storage.addMediaList(fancyCDs);
@@ -334,8 +340,12 @@ public class DataConverter {
 		JsonParser.movieJson(fancyMovies, "data/movie.json");
 		JsonParser.showJson(shows, "data/shows.json");
 		JsonParser.vinylJson(vinyl, "data/vinyl.json");
-		JsonParser.cdJson(cds, "data/cd.json");
-		JsonParser.bookToJson(books, "data/book.json");
+		JsonParser.cdJson(fancyCDs, "data/cd.json");
+		JsonParser.bookToJson(fancyBooks, "data/book.json");
+		
+		for (int i=0; i<fancyBooks.size(); i++) {
+			System.out.printf("%s: %s\n", fancyBooks.get(i).getTitle(), fancyBooks.get(i).getDimensions().toString());
+		}
 		
 	}
 

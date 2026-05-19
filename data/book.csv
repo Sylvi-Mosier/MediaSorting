@@ -1,11 +1,12 @@
 Title,Author,ReleaseDate,ReleaseNumber,Type,PageCount,SortTitle,SortArtist,Length,Width,Height,UnitType
-Smell,Nagabe,2025-10-21,1,Manga,186,null,null,null,null,null,null
-Greatest Hits,Harlan Ellison,2024-03-26,1,Paperback,496,null,null,null,null,null,null
-Goodnight Punpun Vol 1,Inio Asano,2016-03-15,1,Manga,448,Goodnight Punpun,null,null,null,null,null
-Dungeon Meshi Vol 1,Ryoko Kui,2017-05-23,1,Manga,192,Dungeon Meshi,null,null,null,null,null
-My Lesbian Experience With Loneliness,Nagata Kabi,2016-06-17,1,Manga,152,My Lesbian Experience With Loneliness,null,null,null,null,null
-My Alcoholic Escape From Reality,Nagata Kabi,2021-05-11,2,Manga,136,My Lesbian Experience With Loneliness,null,null,null,null,null
-My Wandering Warrior Existence,Nagata Kabi,2022-03-15,3,Manga,128,My Lesbian Experience With Loneliness,null,null,null,null,null
-My Pancreas Broke But My Life Got Better,Nagata Kabi,2023-11-07,4,Manga,160,My Lesbian Experience With Loneliness,null,null,null,null,null
-Fahrenheit 451,Ray Bradbury,1953-10-19,1,Paperback,249,null,null,null,null,null,null
-No Longer Human,Osamu Dazai,1948-01-01,1,Paperback,177,null,null,null,null,null,null
+Greatest Hits,Harlan Ellison,2024-03-26,1,Paperback,496,null,null,5.4375,1.3125,8.25,Inches
+Goodnight Punpun Vol 1,Inio Asano,2016-03-15,1,Manga,448,Goodnight Punpun,null,5.8125,1.1875,8.25,Inches
+Dungeon Meshi Vol 1,Ryoko Kui,2017-05-23,1,Manga,192,Dungeon Meshi,null,5.75,0.5,8.25,Inches
+My Lesbian Experience With Loneliness,Nagata Kabi,2016-06-17,1,Manga,152,My Lesbian Experience With Loneliness,null,6,0.5,8.5,Inches
+My Alcoholic Escape From Reality,Nagata Kabi,2021-05-11,2,Manga,136,My Lesbian Experience With Loneliness,null,5.875,0.375,8.25,Inches
+My Wandering Warrior Existence,Nagata Kabi,2022-03-15,3,Manga,128,My Lesbian Experience With Loneliness,null,5.875,0.375,8.25,Inches
+My Pancreas Broke But My Life Got Better,Nagata Kabi,2023-11-07,4,Manga,160,My Lesbian Experience With Loneliness,null,5.875,0.5,8.25,Inches
+Smell,Nagabe,2025-10-21,1,Manga,186,null,null,5.875,0.5625,8.25,Inches
+Fahrenheit 451,Ray Bradbury,1953-10-19,1,Paperback,249,null,null,5.5,0.5625,8.75,Inches
+No Longer Human,Osamu Dazai,1948-01-01,1,Paperback,177,null,null,5.1875,0.5,8,Inches
+1984,George Orwell,1948-06-08,1,Paperback,294,null,null,5.3125,0.5625,8,Inches

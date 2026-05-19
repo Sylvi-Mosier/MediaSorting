@@ -61,6 +61,10 @@ public class Dimension {
 		this.length = convertInput(length);
 	}
 	
+	public void increaseLength(double length) {
+		this.length = this.length + convertInput(length);
+	}
+	
 	public Double getWidth() {
 		return convertOutput(this.width);
 	}
@@ -69,12 +73,20 @@ public class Dimension {
 		this.width = convertInput(width);
 	}
 	
+	public void increaseWidth(double width) {
+		this.width = this.width + convertInput(width);
+	}
+	
 	public Double getHeight() {
 		return convertOutput(this.height);
 	}
 	
 	public void setHeight(double height) {
 		this.height = convertInput(height);
+	}
+	
+	public void increaseHeight(double height) {
+		this.height = this.height + convertInput(height);
 	}
 	
 	public Double volume() {

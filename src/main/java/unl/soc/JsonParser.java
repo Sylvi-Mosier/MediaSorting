@@ -188,7 +188,58 @@ public class JsonParser {
 		}
 	}
 	
+	public static void cdJson(MediaList<CD> cds, String fileName) {
+		File f = new File(fileName);
+		try {
+			PrintWriter pw = new PrintWriter(f);
+			
+			Gson gson = new GsonBuilder()
+							.setPrettyPrinting()
+							.serializeNulls()
+							.registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
+							.create();
+			
+			pw.printf("{\n\"cds\": [\n");
+			
+			Integer iteration = 0;
+			for (CD cd : cds) {
+				iteration++;
+				if (iteration != cds.size()) {pw.println(gson.toJson(cd) + ",");} 
+				else 						 {pw.println(gson.toJson(cd));}
+				
+			}
+			
+			pw.printf("]}");
+			
+			pw.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static void bookToJson(List<Book> books, String fileName) {
+		File f = new File(fileName);
+		try {
+			PrintWriter pw = new PrintWriter(f);
+			
+			Gson gson = new GsonBuilder()
+							.setPrettyPrinting()
+							.serializeNulls()
+							.registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
+							.create();
+			
+			for (Book book : books) {
+				pw.println(gson.toJson(book));
+			}
+			
+			pw.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static void bookToJson(MediaList<Book> books, String fileName) {
 		File f = new File(fileName);
 		try {
 			PrintWriter pw = new PrintWriter(f);

@@ -12,7 +12,7 @@ public class CD extends Music {
 		this.setDimensions(findDimension(numCDs));
 	}
 	
-	public CD(String title, String artist, LocalDate releaseDate, Integer releaseNumber, Dimension size, Integer runtime, Integer numCDs) {
+	public CD(String title, String artist, LocalDate releaseDate, Integer releaseNumber, Integer runtime, Integer numCDs, Dimension size) {
 		super(title, artist, releaseDate, releaseNumber, size, runtime);
 		this.numCDs = numCDs;
 	}

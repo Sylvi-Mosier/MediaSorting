@@ -17,22 +17,6 @@
   }
 },
 {
-  "numCDs": 2,
-  "runtime": 81,
-  "title": "the jeriancore trilogy",
-  "artist": "jerian",
-  "sortTitle": null,
-  "sortArtist": null,
-  "releaseDate": "2025-10-17",
-  "releaseNumber": 1,
-  "dimension": {
-    "unit": "MILLIMETERS",
-    "length": 142.0,
-    "height": 125.0,
-    "width": 10.0
-  }
-},
-{
   "numCDs": 1,
   "runtime": 50,
   "title": "Kid A",
@@ -41,6 +25,22 @@
   "sortArtist": null,
   "releaseDate": "2000-10-02",
   "releaseNumber": 4,
+  "dimension": {
+    "unit": "MILLIMETERS",
+    "length": 142.0,
+    "height": 125.0,
+    "width": 10.0
+  }
+},
+{
+  "numCDs": 2,
+  "runtime": 81,
+  "title": "the jeriancore trilogy",
+  "artist": "jerian",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "2025-10-17",
+  "releaseNumber": 1,
   "dimension": {
     "unit": "MILLIMETERS",
     "length": 142.0,

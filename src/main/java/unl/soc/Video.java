@@ -17,6 +17,15 @@ public abstract class Video extends Media {
 		this.runtime = runtime;
 		this.numDiscs = numDiscs;
 	}
+	
+	public Video(String title, String artist, LocalDate releaseDate, Integer releaseNumber, 
+			 Medium medium, VideoFormat format, Integer runtime, Integer numDiscs, Dimension dimension) {
+	super(title, artist, releaseDate, releaseNumber, dimension);
+	this.medium = medium;
+	this.format = format;
+	this.runtime = runtime;
+	this.numDiscs = numDiscs;
+}
 
 	public Medium getMedium() {
 		return medium;
@@ -39,6 +48,7 @@ public abstract class Video extends Media {
 		
 		return medium + format + runtime + numDiscs;
 	}
+	
 	
 	@Override
 	protected String lineHeader() {

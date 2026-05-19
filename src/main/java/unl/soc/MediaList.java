@@ -18,6 +18,7 @@ public class MediaList<T extends Media> implements Iterable<T> {
 		this.size = 0;
 		this.titleSpacing = 0;
 		this.artistSpacing = 0;
+		this.dimensions = new Dimension(0.0, 0.0, 0.0);
 	}
 	
 	public int size() {
@@ -59,6 +60,11 @@ public class MediaList<T extends Media> implements Iterable<T> {
 		for (int i=this.size; i > insertIndex; i--) {
 			this.contents[i] = this.contents[i-1];
 		}
+		
+		this.dimensions.increaseLength(element.getDimensions().getLength());
+		this.dimensions.increaseWidth (element.getDimensions(). getWidth());
+		this.dimensions.increaseHeight(element.getDimensions().getHeight());
+		
 		
 		this.contents[insertIndex] = element;
 		this.size++;
@@ -106,16 +112,15 @@ public class MediaList<T extends Media> implements Iterable<T> {
 		int maxArtist = this.artistSpacing;
 		int maxTitle = this.titleSpacing;
 		
-		String output = "";
+		StringBuilder sb = new StringBuilder();
 		
-		output = output + lineBreak();
+		sb.append(lineBreak());
 		for (int i=0; i<this.size; i++) {
-			output = output 
-					+ String.format("| %-71s |\n", this.contents[i].toString(maxArtist, maxTitle));
+			sb.append(String.format("| %-71s |\n", this.contents[i].toString(maxArtist, maxTitle)));
 		}
-		output = output + lineBreak();
+		sb.append(lineBreak());
 		
-		return output;
+		return sb.toString();
 	}
 	
 	public String storageString() {

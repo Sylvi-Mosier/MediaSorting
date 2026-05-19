@@ -1,6 +1,6 @@
 Title,Director,ReleaseDate,ReleaseNumber,Medium,Format,Runtime,NumDiscs,Length,Width,Height,UnitType
 Come and See, Elem Klimov,1985-07-09,1,Live Action,Criterion,142,1,null,null,null,null
-Fantastic Mr. Fox,Wes Anderson,2009-11-13,6,Stop Motion,Criterion,88,1,null,null,null,null
+Fantastic Mr. Fox,Wes Anderson,2009-11-13,6,Stop Motion,Criterion,88,1,5.5625,0.5,6.875,Inches
 Flow,Gints Zilbalodis,2024-11-22,1,3D Animation,Criterion,85,3,null,null,null,null
 Teen Apocalypse Trilogy,Gregg Araki,1994-08-19,3,Live Action,Criterion,244,3,null,null,null,null
 I Saw The TV Glow,Jane Schoenbrun,2024-05-03,2,Live Action,Blu-Ray,100,1,null,null,null,null
@@ -9,5 +9,5 @@ Alien Quadrilogy,Ridley Scott,1979-05-25,0,Live Action,Blu-Ray,477,4,null,null,n
 Scream 3-Movie Collection,Wes Craven,1996-12-18,0,Live Action,Blu-Ray,346,4,null,null,null,null
 Saw 8-Film Collection,James Wan,2004-01-19,0,Live Action,Blu-Ray,780,9,134.9375,23.8125,176.2125,null
 Shaun of the Dead,Edgar Wright,2004-03-29,1,Live Action,Blu-Ray,100,1,null,null,null,null
-Shin Godzilla,Shinji Higuchi,2016-07-25,1,Live Action,Blu-Ray,120,2,null,null,null,null
+Shin Godzilla,Shinji Higuchi,2016-07-25,1,Live Action,Blu-Ray,120,2,5.375,0.5,6.75,Inches
 Wall-E,Andrew Stanton,2008-06-27,1,3D Animation,Criterion,98,3,null,null,null,null

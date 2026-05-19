@@ -46,6 +46,20 @@ public class MediaComparator {
 		}
 	};
 	
+	public static Comparator<Vinyl> vinylByYear = new Comparator<>() {
+		public int compare(Vinyl a, Vinyl b) {
+			
+			int cmp = a.getReleaseDate().compareTo(b.getReleaseDate());
+			if (cmp != 0) {return cmp;}
+			
+			cmp = a.getSortTitle().compareTo(b.getSortTitle());
+			if (cmp != 0) {return cmp;}
+			
+			cmp = a.getSortArtist().compareTo(b.getSortArtist());
+			return cmp;
+		}
+	};
+	
 	///////
 	//CDs//
 	///////

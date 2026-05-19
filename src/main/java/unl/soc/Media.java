@@ -111,6 +111,18 @@ public abstract class Media implements Catalogue {
 		
 	}
 	
+	public String toStringDimension() {
+		if (this.dimension == null) {return null;}
+		
+		return String.format("%s : %s", titlePrint(), this.dimension.toString());
+	}
+	
+	public String toStringDimension(int titleSpacing) {
+		if (this.dimension == null) {return null;}
+		
+		return String.format("%s : %s", titlePrint(titleSpacing), this.dimension.toString());
+	}
+	
 	public String toString(int artistSpacing, int titleSpacing) {
 		return artistPrint(artistSpacing) + titlePrint(titleSpacing);
 	}
@@ -124,6 +136,10 @@ public abstract class Media implements Catalogue {
 		}
 		
 		return indentation + String.format("%s - ", getArtist());
+	}
+	
+	protected String titlePrint() {
+		return String.format("%s [%d]", getTitle(), getReleaseYear());
 	}
 	
 	protected String titlePrint(int spacing) {

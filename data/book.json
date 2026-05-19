@@ -1,4 +1,164 @@
 {
+  "pageCount": 294,
+  "type": "PAPERBACK",
+  "title": "1984",
+  "artist": "George Orwell",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "1948-06-08",
+  "releaseNumber": 1,
+  "dimension": {
+    "unit": "INCHES",
+    "length": 134.9375,
+    "height": 203.2,
+    "width": 14.2875
+  }
+}
+{
+  "pageCount": 192,
+  "type": "MANGA",
+  "title": "Dungeon Meshi Vol 1",
+  "artist": "Ryoko Kui",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "2017-05-23",
+  "releaseNumber": 1,
+  "dimension": {
+    "unit": "INCHES",
+    "length": 146.04999999999998,
+    "height": 209.54999999999998,
+    "width": 12.7
+  }
+}
+{
+  "pageCount": 249,
+  "type": "PAPERBACK",
+  "title": "Fahrenheit 451",
+  "artist": "Ray Bradbury",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "1953-10-19",
+  "releaseNumber": 1,
+  "dimension": {
+    "unit": "INCHES",
+    "length": 139.7,
+    "height": 222.25,
+    "width": 14.2875
+  }
+}
+{
+  "pageCount": 448,
+  "type": "MANGA",
+  "title": "Goodnight Punpun Vol 1",
+  "artist": "Inio Asano",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "2016-03-15",
+  "releaseNumber": 1,
+  "dimension": {
+    "unit": "INCHES",
+    "length": 147.6375,
+    "height": 209.54999999999998,
+    "width": 30.162499999999998
+  }
+}
+{
+  "pageCount": 496,
+  "type": "PAPERBACK",
+  "title": "Greatest Hits",
+  "artist": "Harlan Ellison",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "2024-03-26",
+  "releaseNumber": 1,
+  "dimension": {
+    "unit": "INCHES",
+    "length": 138.11249999999998,
+    "height": 209.54999999999998,
+    "width": 33.3375
+  }
+}
+{
+  "pageCount": 136,
+  "type": "MANGA",
+  "title": "My Alcoholic Escape From Reality",
+  "artist": "Nagata Kabi",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "2021-05-11",
+  "releaseNumber": 2,
+  "dimension": {
+    "unit": "INCHES",
+    "length": 149.225,
+    "height": 209.54999999999998,
+    "width": 9.524999999999999
+  }
+}
+{
+  "pageCount": 152,
+  "type": "MANGA",
+  "title": "My Lesbian Experience With Loneliness",
+  "artist": "Nagata Kabi",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "2016-06-17",
+  "releaseNumber": 1,
+  "dimension": {
+    "unit": "INCHES",
+    "length": 152.39999999999998,
+    "height": 215.89999999999998,
+    "width": 12.7
+  }
+}
+{
+  "pageCount": 160,
+  "type": "MANGA",
+  "title": "My Pancreas Broke But My Life Got Better",
+  "artist": "Nagata Kabi",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "2023-11-07",
+  "releaseNumber": 4,
+  "dimension": {
+    "unit": "INCHES",
+    "length": 149.225,
+    "height": 209.54999999999998,
+    "width": 12.7
+  }
+}
+{
+  "pageCount": 128,
+  "type": "MANGA",
+  "title": "My Wandering Warrior Existence",
+  "artist": "Nagata Kabi",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "2022-03-15",
+  "releaseNumber": 3,
+  "dimension": {
+    "unit": "INCHES",
+    "length": 149.225,
+    "height": 209.54999999999998,
+    "width": 9.524999999999999
+  }
+}
+{
+  "pageCount": 177,
+  "type": "PAPERBACK",
+  "title": "No Longer Human",
+  "artist": "Osamu Dazai",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "1948-01-01",
+  "releaseNumber": 1,
+  "dimension": {
+    "unit": "INCHES",
+    "length": 131.7625,
+    "height": 203.2,
+    "width": 12.7
+  }
+}
+{
   "pageCount": 186,
   "type": "MANGA",
   "title": "Smell",
@@ -7,5 +167,10 @@
   "sortArtist": null,
   "releaseDate": "2025-10-21",
   "releaseNumber": 1,
-  "dimension": null
+  "dimension": {
+    "unit": "INCHES",
+    "length": 149.225,
+    "height": 209.54999999999998,
+    "width": 14.2875
+  }
 }
