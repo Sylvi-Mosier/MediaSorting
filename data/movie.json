@@ -2,7 +2,79 @@
 "movies": [
 {
   "medium": "LIVE_ACTION",
-  "format": "BLURAY",
+  "format": "CRITERION",
+  "runtime": 142,
+  "numDiscs": 1,
+  "title": "Come and See",
+  "artist": " Elem Klimov",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "1985-07-09",
+  "releaseNumber": 1,
+  "dimension": {
+    "unit": "MILLIMETERS",
+    "length": 137.5,
+    "height": 174.625,
+    "width": 19.05
+  }
+},
+{
+  "medium": "STOP_MOTION_ANIMATION",
+  "format": "CRITERION",
+  "runtime": 88,
+  "numDiscs": 1,
+  "title": "Fantastic Mr. Fox",
+  "artist": "Wes Anderson",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "2009-11-13",
+  "releaseNumber": 6,
+  "dimension": {
+    "unit": "MILLIMETERS",
+    "length": 137.5,
+    "height": 174.625,
+    "width": 19.05
+  }
+},
+{
+  "medium": "THREE_DIMENSION_ANIMATION",
+  "format": "CRITERION",
+  "runtime": 85,
+  "numDiscs": 3,
+  "title": "Flow",
+  "artist": "Gints Zilbalodis",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "2024-11-22",
+  "releaseNumber": 1,
+  "dimension": {
+    "unit": "MILLIMETERS",
+    "length": 137.5,
+    "height": 174.625,
+    "width": 19.05
+  }
+},
+{
+  "medium": "LIVE_ACTION",
+  "format": "CRITERION",
+  "runtime": 244,
+  "numDiscs": 3,
+  "title": "Teen Apocalypse Trilogy",
+  "artist": "Gregg Araki",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "1994-08-19",
+  "releaseNumber": 3,
+  "dimension": {
+    "unit": "MILLIMETERS",
+    "length": 137.5,
+    "height": 174.625,
+    "width": 19.05
+  }
+},
+{
+  "medium": "LIVE_ACTION",
+  "format": "CRITERION",
   "runtime": 93,
   "numDiscs": 3,
   "title": "Videodrome",
@@ -11,6 +83,112 @@
   "sortArtist": null,
   "releaseDate": "1983-02-04",
   "releaseNumber": 8,
+  "dimension": {
+    "unit": "MILLIMETERS",
+    "length": 137.5,
+    "height": 174.625,
+    "width": 19.05
+  }
+},
+{
+  "medium": "THREE_DIMENSION_ANIMATION",
+  "format": "CRITERION",
+  "runtime": 98,
+  "numDiscs": 3,
+  "title": "Wall-E",
+  "artist": "Andrew Stanton",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "2008-06-27",
+  "releaseNumber": 1,
+  "dimension": {
+    "unit": "MILLIMETERS",
+    "length": 137.5,
+    "height": 174.625,
+    "width": 19.05
+  }
+},
+{
+  "medium": "LIVE_ACTION",
+  "format": "BLURAY",
+  "runtime": 477,
+  "numDiscs": 4,
+  "title": "Alien Quadrilogy",
+  "artist": "Ridley Scott",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "1979-05-25",
+  "releaseNumber": 0,
+  "dimension": null
+},
+{
+  "medium": "LIVE_ACTION",
+  "format": "BLURAY",
+  "runtime": 100,
+  "numDiscs": 1,
+  "title": "I Saw The TV Glow",
+  "artist": "Jane Schoenbrun",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "2024-05-03",
+  "releaseNumber": 2,
+  "dimension": null
+},
+{
+  "medium": "LIVE_ACTION",
+  "format": "BLURAY",
+  "runtime": 780,
+  "numDiscs": 9,
+  "title": "Saw 8-Film Collection",
+  "artist": "James Wan",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "2004-01-19",
+  "releaseNumber": 0,
+  "dimension": {
+    "unit": "MILLIMETERS",
+    "length": 134.9375,
+    "height": 176.2125,
+    "width": 23.8125
+  }
+},
+{
+  "medium": "LIVE_ACTION",
+  "format": "BLURAY",
+  "runtime": 346,
+  "numDiscs": 4,
+  "title": "Scream 3-Movie Collection",
+  "artist": "Wes Craven",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "1996-12-18",
+  "releaseNumber": 0,
+  "dimension": null
+},
+{
+  "medium": "LIVE_ACTION",
+  "format": "BLURAY",
+  "runtime": 100,
+  "numDiscs": 1,
+  "title": "Shaun of the Dead",
+  "artist": "Edgar Wright",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "2004-03-29",
+  "releaseNumber": 1,
+  "dimension": null
+},
+{
+  "medium": "LIVE_ACTION",
+  "format": "BLURAY",
+  "runtime": 120,
+  "numDiscs": 2,
+  "title": "Shin Godzilla",
+  "artist": "Shinji Higuchi",
+  "sortTitle": null,
+  "sortArtist": null,
+  "releaseDate": "2016-07-25",
+  "releaseNumber": 1,
   "dimension": null
 }
 ]}

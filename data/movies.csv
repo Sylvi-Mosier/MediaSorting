@@ -1,12 +1,13 @@
-Title,Director,ReleaseDate,ReleaseNumber,Medium,Format,Runtime,NumDiscs
-Come and See, Elem Klimov,1985-07-09,1,Live Action,Blu-Ray,142,1
-Fantastic Mr. Fox,Wes Anderson,2009-11-13,6,Stop Motion,Blu-Ray,88,1
-Flow,Gints Zilbalodis,2024-11-22,1,3D Animation,Blu-Ray,85,3
-Teen Apocalypse Trilogy,Gregg Araki,1994-08-19,3,Live Action,Blu-Ray,244,3
-I Saw The TV Glow,Jane Schoenbrun,2024-05-03,2,Live Action,Blu-Ray,100,1
-Videodrome,David Cronenberg,1983-02-04,8,Live Action,Blu-Ray,93,3
-Alien Quadrilogy,Ridley Scott,1979-05-25,0,Live Action,Blu-Ray,477,4
-Scream 3-Movie Collection,Wes Craven,1996-12-18,0,Live Action,Blu-Ray,346,4
-Saw 8-Film Collection,James Wan,2004-01-19,0,Live Action,Blu-Ray,780,9
-Shaun of the Dead,Edgar Wright,2004-03-29,1,Live Action,Blu-Ray,100,1
-Shin Godzilla,Shinji Higuchi,2016-07-25,1,Live Action,Blu-Ray,120,2
+Title,Director,ReleaseDate,ReleaseNumber,Medium,Format,Runtime,NumDiscs,Length,Width,Height,UnitType
+Come and See, Elem Klimov,1985-07-09,1,Live Action,Criterion,142,1,null,null,null,null
+Fantastic Mr. Fox,Wes Anderson,2009-11-13,6,Stop Motion,Criterion,88,1,null,null,null,null
+Flow,Gints Zilbalodis,2024-11-22,1,3D Animation,Criterion,85,3,null,null,null,null
+Teen Apocalypse Trilogy,Gregg Araki,1994-08-19,3,Live Action,Criterion,244,3,null,null,null,null
+I Saw The TV Glow,Jane Schoenbrun,2024-05-03,2,Live Action,Blu-Ray,100,1,null,null,null,null
+Videodrome,David Cronenberg,1983-02-04,8,Live Action,Criterion,93,3,null,null,null,null
+Alien Quadrilogy,Ridley Scott,1979-05-25,0,Live Action,Blu-Ray,477,4,null,null,null,null
+Scream 3-Movie Collection,Wes Craven,1996-12-18,0,Live Action,Blu-Ray,346,4,null,null,null,null
+Saw 8-Film Collection,James Wan,2004-01-19,0,Live Action,Blu-Ray,780,9,134.9375,23.8125,176.2125,null
+Shaun of the Dead,Edgar Wright,2004-03-29,1,Live Action,Blu-Ray,100,1,null,null,null,null
+Shin Godzilla,Shinji Higuchi,2016-07-25,1,Live Action,Blu-Ray,120,2,null,null,null,null
+Wall-E,Andrew Stanton,2008-06-27,1,3D Animation,Criterion,98,3,null,null,null,null

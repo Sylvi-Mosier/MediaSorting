@@ -10,6 +10,7 @@
   "releaseDate": "2021-11-12",
   "releaseNumber": 1,
   "dimension": {
+    "unit": "MILLIMETERS",
     "length": 331.15,
     "height": 331.15,
     "width": 12.7
@@ -25,6 +26,7 @@
   "releaseDate": "2023-10-20",
   "releaseNumber": 2,
   "dimension": {
+    "unit": "MILLIMETERS",
     "length": 331.15,
     "height": 331.15,
     "width": 12.7
@@ -40,6 +42,7 @@
   "releaseDate": "2022-02-04",
   "releaseNumber": 2,
   "dimension": {
+    "unit": "MILLIMETERS",
     "length": 331.15,
     "height": 331.15,
     "width": 12.7
@@ -55,6 +58,7 @@
   "releaseDate": "2025-04-04",
   "releaseNumber": 3,
   "dimension": {
+    "unit": "MILLIMETERS",
     "length": 331.15,
     "height": 331.15,
     "width": 12.7
@@ -70,6 +74,7 @@
   "releaseDate": "1998-02-10",
   "releaseNumber": 2,
   "dimension": {
+    "unit": "MILLIMETERS",
     "length": 331.15,
     "height": 331.15,
     "width": 5.0

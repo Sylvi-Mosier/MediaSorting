@@ -10,6 +10,10 @@ import java.util.Comparator;
  */
 public class MediaComparator {
 	
+	/////////
+	//VINYL//
+	/////////
+	
 	/**
 	 * Comparator that's the standard for sorting vinyls.
 	 * sorts vinyls by sortArtist, then releaseNumber
@@ -42,6 +46,10 @@ public class MediaComparator {
 		}
 	};
 	
+	///////
+	//CDs//
+	///////
+	
 	/**
 	 * Comparator that's the standard for sorting CDs.
 	 * sorts CDs by sortArtist, then releaseNumber
@@ -58,6 +66,10 @@ public class MediaComparator {
 		}
 	};
 	
+	/////////
+	//SHOWS//
+	/////////
+	
 	public static Comparator<Show> showByTitle = new Comparator<>() {
 		public int compare(Show a, Show b) {
 			int cmp = a.getSortTitle().compareTo(b.getSortTitle());
@@ -66,6 +78,22 @@ public class MediaComparator {
 			return a.getReleaseNumber().compareTo(b.getReleaseNumber());
 		}
 	};
+	
+	public static Comparator<Show> showByYear = new Comparator<>() {
+		public int compare(Show a, Show b) {
+			int cmp = a.getReleaseYear().compareTo(b.getReleaseYear());
+			if (cmp != 0) {return cmp;}
+			
+			cmp = a.getSortTitle().compareTo(b.getSortTitle());
+			if (cmp != 0) {return cmp;}
+			
+			return a.getReleaseNumber().compareTo(b.getReleaseNumber());
+		}
+	};
+	
+	//////////
+	//MOVIES//
+	//////////
 	
 	public static Comparator<Movie> movieByDirector = new Comparator<>() {
 		public int compare(Movie a, Movie b) {
@@ -84,6 +112,34 @@ public class MediaComparator {
 			return a.getReleaseNumber().compareTo(b.getReleaseNumber());
 		}
 	};
+	
+	public static Comparator<Movie> movieByFormat = new Comparator<>() {
+		public int compare(Movie a, Movie b) {
+			int cmp = a.getFormat().getFormatValue().compareTo(b.getFormat().getFormatValue());
+			if (cmp != 0) {return cmp;}
+			
+			cmp = a.getSortTitle().compareTo(b.getSortTitle());
+			if (cmp != 0) {return cmp;}
+			
+			return a.getReleaseNumber().compareTo(b.getReleaseNumber());
+		}
+	};
+	
+	public static Comparator<Movie> movieByYear = new Comparator<>() {
+		public int compare(Movie a, Movie b) {
+			int cmp = a.getReleaseYear().compareTo(b.getReleaseYear());
+			if (cmp != 0) {return cmp;}
+			
+			cmp = a.getSortTitle().compareTo(b.getSortTitle());
+			if (cmp != 0) {return cmp;}
+			
+			return a.getReleaseNumber().compareTo(b.getReleaseNumber());
+		}
+	};
+	
+	/////////
+	//BOOKS//
+	/////////
 	
 	public static Comparator<Book> bookByTitle = new Comparator<>() {
 		public int compare(Book a, Book b) {

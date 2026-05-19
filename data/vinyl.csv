@@ -1,37 +1,37 @@
-Title,Artist,ReleaseDate,ReleaseNumber,Runtime,NumLPs,SortTitle,SortArtist,Length,Width,Height
-Toxicity,System Of A Down,2001-09-03,2,44,1,null,null,null,null,null
-American Football,American Football,1999-09-14,1,51,2,null,null,null,null,null
-The New Abnormal,The Strokes,2020-04-10,6,45,1,null,null,null,null,null
-In The Aeroplane Over The Sea,Neutral Milk Hotel,1998-02-10,2,40,1,null,null,null,null,null
-Ants From Up There,Black Country New Road,2022-02-04,2,59,2,null,null,null,null,null
-Trick,Alex G,2012-11-06,4,31,1,null,null,null,null,null
-10000 gecs,100 gecs,2023-03-17,3,27,1,null,null,null,null,null
-Astroworld,Travis Scott,2018-08-03,3,58,2,null,null,331.15,5,331.15
-Goblin,Tyler The Creator,2011-05-10,1,74,2,null,null,null,null,null
-stratosphere,duster,1998-02-24,1,49,2,Stratosphere,Duster,null,null,null
-birds in the ground,eiafuawn,2005-09-13,3,37,1,Birds In The Ground,Duster,null,null,null
-Ok Computer,Radiohead,1997-05-21,3,53,3,null,null,null,null,null
-Death Race For Love,JuiceWRLD,2019-03-08,2,72,2,null,null,null,null,null
-Floral Shoppe,Vektroid,2011-12-09,9,48,1,null,null,null,null,null
-Twin Fantasy,Car Seat Headrest,2018-02-16,3,71,2,null,null,null,null,null
-Kid A,Radiohead,2000-10-02,4,50,2,null,null,null,null,null
-Weezer (Blue Album),Weezer,1994-05-10,1,41,1,null,Weezer,null,null,null
-Those Days Are Gone,Free Throw,2014-09-16,1,29,1,null,null,null,null,null
-Selected Ambient Works Volume II,Aphex Twin,1994-03-07,2,167,3,Selected Ambient Works Volume 2,null,null,null,null
-you’re gonna miss it all,Modern Baseball,2014-02-11,2,29,1,You’re Gonna Miss It All,null,null,null,null
-frailty,Jane Remover,2021-11-12,1,57,2,Frailty,null,null,null,null
-A Very 1999 Christmas,Schlatt,2024-12-01,1,22,1,null,null,null,null,null
-MM..FOOD,MF Doom,2004-11-16,5,49,2,Mm Food,null,null,null,null
-Bitches Brew,Miles Davis,1970-03-30,44,64,2,null,null,null,null,null
-In Rainbows,Radiohead,2007-10-10,7,42,1,null,null,null,null,null
-Forever Howlong,Black Country New Road,2025-04-04,3,52,2,null,null,null,null,null
-Scrapyard,Quadeca,2024-02-16,5,46,2,null,null,null,null,null
-Ghostholding,Venturing,2025-02-14,3,51,2,null,Jane Remover,null,null,null
-Census Designated,Jane Remover,2023-10-20,2,62,2,null,null,null,null,null
-Syro,Aphex Twin,2014-09-19,6,64,3,null,null,null,null,null
-The Scholars,Car Seat Headrest,2025-05-02,5,70,2,null,null,null,null,null
-Yankee Hotel Foxtrot,Wilco,2001-09-29,4,52,2,null,null,null,null,null
-Analphabetapolothology,Cap’n Jazz,1998-01-08,1,99,2,null,Capn Jazz,null,null,null
-Revengeseekerz,Jane Remover,2025-04-04,4,49,2,null,null,null,null,null
-Demon Daze,sports.,2015-08-25,1,26,2,null,Sports,null,null,null
-Southeast of Somewhere,Kerosene Heights,2023-05-19,3,35,2,null,null,null,null,null
+Title,Artist,ReleaseDate,ReleaseNumber,Runtime,NumLPs,SortTitle,SortArtist,Length,Width,Height,UnitType
+Toxicity,System Of A Down,2001-09-03,2,44,1,null,null,null,null,null,null
+American Football,American Football,1999-09-14,1,51,2,null,null,null,null,null,null
+The New Abnormal,The Strokes,2020-04-10,6,45,1,null,null,null,null,null,null
+In The Aeroplane Over The Sea,Neutral Milk Hotel,1998-02-10,2,40,1,null,null,null,null,null,null
+Ants From Up There,Black Country New Road,2022-02-04,2,59,2,null,null,null,null,null,null
+Trick,Alex G,2012-11-06,4,31,1,null,null,null,null,null,null
+10000 gecs,100 gecs,2023-03-17,3,27,1,null,null,null,null,null,null
+Astroworld,Travis Scott,2018-08-03,3,58,2,null,null,331.15,5,331.15,null
+Goblin,Tyler The Creator,2011-05-10,1,74,2,null,null,null,null,null,null
+stratosphere,duster,1998-02-24,1,49,2,Stratosphere,Duster,null,null,null,null
+birds in the ground,eiafuawn,2005-09-13,3,37,1,Birds In The Ground,Duster,null,null,null,null
+Ok Computer,Radiohead,1997-05-21,3,53,3,null,null,null,null,null,null
+Death Race For Love,JuiceWRLD,2019-03-08,2,72,2,null,null,null,null,null,null
+Floral Shoppe,Vektroid,2011-12-09,9,48,1,null,null,null,null,null,null
+Twin Fantasy,Car Seat Headrest,2018-02-16,3,71,2,null,null,null,null,null,null
+Kid A,Radiohead,2000-10-02,4,50,2,null,null,null,null,null,null
+Weezer (Blue Album),Weezer,1994-05-10,1,41,1,null,Weezer,null,null,null,null
+Those Days Are Gone,Free Throw,2014-09-16,1,29,1,null,null,null,null,null,null
+Selected Ambient Works Volume II,Aphex Twin,1994-03-07,2,167,3,Selected Ambient Works Volume 2,null,null,null,null,null
+you’re gonna miss it all,Modern Baseball,2014-02-11,2,29,1,You’re Gonna Miss It All,null,null,null,null,null
+frailty,Jane Remover,2021-11-12,1,57,2,Frailty,null,null,null,null,null
+A Very 1999 Christmas,Schlatt,2024-12-01,1,22,1,null,null,null,null,null,null
+MM..FOOD,MF Doom,2004-11-16,5,49,2,Mm Food,null,null,null,null,null
+Bitches Brew,Miles Davis,1970-03-30,44,64,2,null,null,null,null,null,null
+In Rainbows,Radiohead,2007-10-10,7,42,1,null,null,null,null,null,null
+Forever Howlong,Black Country New Road,2025-04-04,3,52,2,null,null,null,null,null,null
+Scrapyard,Quadeca,2024-02-16,5,46,2,null,null,null,null,null,null
+Ghostholding,Venturing,2025-02-14,3,51,2,null,Jane Remover,null,null,null,null
+Census Designated,Jane Remover,2023-10-20,2,62,2,null,null,null,null,null,null
+Syro,Aphex Twin,2014-09-19,6,64,3,null,null,null,null,null,null
+The Scholars,Car Seat Headrest,2025-05-02,5,70,2,null,null,null,null,null,null
+Yankee Hotel Foxtrot,Wilco,2001-09-29,4,52,2,null,null,null,null,null,null
+Analphabetapolothology,Cap’n Jazz,1998-01-08,1,99,2,null,Capn Jazz,null,null,null,null
+Revengeseekerz,Jane Remover,2025-04-04,4,49,2,null,null,null,null,null,null
+Demon Daze,sports.,2015-08-25,1,26,2,null,Sports,null,null,null,null
+Southeast of Somewhere,Kerosene Heights,2023-05-19,3,35,2,null,null,null,null,null,null

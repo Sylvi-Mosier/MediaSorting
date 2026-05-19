@@ -152,6 +152,15 @@ public class DataConverter {
 			
 			Movie movie = new Movie(title, director, releaseDate, releaseNumber, medium, format, runtime, numDiscs);
 			
+			if (!isNull(tokens[8]) &&
+				!isNull(tokens[9]) &&
+				!isNull(tokens[10])) {
+				Dimension dimension = new Dimension(Double.parseDouble(tokens[8]), 
+													Double.parseDouble(tokens[9]), 
+													Double.parseDouble(tokens[10]));
+				movie.setDimensions(dimension);
+			}
+			
 			movies.add(movie);
 		}
 		
@@ -234,12 +243,45 @@ public class DataConverter {
 			Integer releaseNumber = Integer.parseInt(tokens[3]);
 			BookType type = BookType.stringToBookType(tokens[4]);
 			Integer pageCount = Integer.parseInt(tokens[5]);
+			Dimension dimension = stringToDimension(tokens[8], 
+												    tokens[9], 
+												    tokens[10], 
+												    tokens[11]);
 			
-			Book book = new Book(title, author, releaseDate, releaseNumber, type, pageCount);
+			Book book = new Book(title, author, releaseDate, releaseNumber, type, pageCount, dimension);
 			books.add(book);
 		}
 		
 		return books;
+	}
+	
+	private static Dimension stringToDimension(String length, String width, String height) {
+		if (isNull(length) &&
+			isNull(width) &&
+			isNull(height)) {
+			return null;
+		} else {
+			return new Dimension(Double.parseDouble(length), 
+								 Double.parseDouble(width), 
+								 Double.parseDouble(height));
+		}
+		
+		
+	}
+	
+	private static Dimension stringToDimension(String length, String width, String height, String unit) {
+		if (isNull(length) &&
+			isNull(width)  &&
+			isNull(height)) {
+			return null;
+		} else {
+			return new Dimension(Double.parseDouble(length),
+								 Double.parseDouble(width),
+								 Double.parseDouble(height),
+								 LengthUnit.parseUnit(unit));
+		}
+		
+		
 	}
 	
 	private static boolean isNull(String conditional) {
@@ -256,6 +298,7 @@ public class DataConverter {
 		List<String> rawBooks = new ArrayList<>();
 		List<String> rawVinylsFancy = new ArrayList<>();
 		List<String> rawMoviesFancy = new ArrayList<>();
+		List<String> rawBooksFancy = new ArrayList<>();
 		
 		rawVinyls = DataLoader.dataLoader("data/test/vinyl.csv");
 		rawCDs = DataLoader.dataLoader("data/test/cd.csv");
@@ -264,6 +307,7 @@ public class DataConverter {
 		rawBooks = DataLoader.dataLoader("data/test/book.csv");
 		rawVinylsFancy = DataLoader.dataLoader("data/vinyl.csv");
 		rawMoviesFancy = DataLoader.dataLoader("data/movies.csv");
+		rawBooksFancy = DataLoader.dataLoader("data/book.csv");
 		
 		List<Vinyl> vinyl = DataConverter.vinylConverter(rawVinyls);
 		List<CD> cds = DataConverter.cdConverter(rawCDs);
@@ -273,9 +317,9 @@ public class DataConverter {
 		
 		MediaList<Vinyl> fancyVinyl = DataConverter.vinylConverter(rawVinylsFancy, MediaComparator.vinylByArtist);
 		MediaList<CD> fancyCDs = DataConverter.cdConverter(rawCDs, MediaComparator.cdByArtist);
-		MediaList<Movie> fancyMovies = DataConverter.movieConverter(rawMoviesFancy, MediaComparator.movieByTitle);
+		MediaList<Movie> fancyMovies = DataConverter.movieConverter(rawMoviesFancy, MediaComparator.movieByFormat);
 		MediaList<Show> fancyShows = DataConverter.showConverter(rawShows, MediaComparator.showByTitle);
-		MediaList<Book> fancyBooks = DataConverter.bookConverter(rawBooks, MediaComparator.bookByTitle);
+		MediaList<Book> fancyBooks = DataConverter.bookConverter(rawBooksFancy, MediaComparator.bookByTitle);
 		
 		Storage storage = new Storage("Media Storage", 125.0);
 		
@@ -287,26 +331,7 @@ public class DataConverter {
 		
 		storage.writeToOutput();
 		
-		/*
-		File f = new File("data/output.txt");
-		try {
-			PrintWriter pw = new PrintWriter(f);
-			pw.println(storage.toString());
-			pw.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		*/
-		
-		/*
-		System.out.println(fancyVinyl.toString());
-		System.out.println(fancyCDs.toString());
-		System.out.println(fancyMovies.toString());
-		System.out.println(fancyShows.toString());
-		System.out.println(fancyBooks.toString());
-		*/
-		
-		JsonParser.movieJson(movies, "data/movie.json");
+		JsonParser.movieJson(fancyMovies, "data/movie.json");
 		JsonParser.showJson(shows, "data/shows.json");
 		JsonParser.vinylJson(vinyl, "data/vinyl.json");
 		JsonParser.cdJson(cds, "data/cd.json");

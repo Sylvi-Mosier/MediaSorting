@@ -41,6 +41,35 @@ public class JsonParser {
 		}
 	}
 	
+	public static void movieJson(MediaList<Movie> movies, String fileName) {
+		File f = new File(fileName);
+		try {
+			PrintWriter pw = new PrintWriter(f);
+			
+			Gson gson = new GsonBuilder()
+							.setPrettyPrinting()
+							.serializeNulls()
+							.registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
+							.create();
+			
+			pw.printf("{\n\"movies\": [\n");
+			
+			Integer iteration = 0;
+			for (Movie movie : movies) {
+				iteration++;
+				if (iteration != movies.size()) {pw.println(gson.toJson(movie) + ",");} 
+				else 							{pw.println(gson.toJson(movie));}
+				
+			}
+			
+			pw.printf("]}");
+			
+			pw.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static void showJson(List<Show> shows, String fileName) {
 		File f = new File(fileName);
 		try {

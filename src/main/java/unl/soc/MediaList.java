@@ -6,9 +6,11 @@ import java.util.Iterator;
 public class MediaList<T extends Media> implements Iterable<T> {
 	private int size;
 	private Media[] contents;
+	private Dimension dimensions;
 	private Comparator<T> comp;
 	private Integer titleSpacing;
 	private Integer artistSpacing;
+	
 	
 	public MediaList(Comparator<T> comp) {
 		this.comp = comp;
@@ -21,6 +23,12 @@ public class MediaList<T extends Media> implements Iterable<T> {
 	public int size() {
 		return this.size;
 	}
+	
+	public Dimension getDimensions() {
+		return this.dimensions;
+	}
+	
+	
 	
 	public boolean isEmpty() {
 		return this.size == 0;

@@ -84,7 +84,9 @@ public abstract class Media implements Catalogue {
 	}
 	
 	protected void setDimensions(Dimension dimension) {
-		this.dimension = dimension;
+		if (dimension != null) {
+			this.dimension = dimension;
+		}
 	}
 	
 	protected String lineHeader() {
